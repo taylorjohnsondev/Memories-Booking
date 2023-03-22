@@ -1,0 +1,811 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #618694;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* HOMEPAGE */
+.featured-photographers-card {
+  background-color: #fff;
+  border-radius: 50px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 800px;
+  margin-top: 40px;
+  margin-left: 80px;
+  height: 420px;
+}
+
+.featured-locations-card {
+  background-color: #fff;
+  border-radius: 50px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 800px;
+  margin-top: 40px;
+  margin-left: 80px;
+  height: 420px;
+  margin-bottom: 40px;
+  background-size: cover;
+}
+
+.about-card {
+  position: absolute;
+  top: 40;
+  right: 0;
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 50px;
+  max-width: 500px;
+  height: 880px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+  margin-right: 300px;
+}
+
+.photographers {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.photographer {
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+.circle img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.photographer-info {
+  text-align: center;
+  margin-top: 10px;
+  color: #38484d;
+}
+
+.about-card p {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+.photographer-info h3 {
+  color: #38484d;
+}
+
+.featured-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #38484d;
+  margin-top: 20px;
+}
+
+.about-card h2 {
+  text-align: center;
+  color: #38484d;
+  margin-bottom: 20px;
+}
+
+.about-card img {
+  margin-top: 40px;
+  max-width: 300px;
+}
+
+.split-screen {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left-column {
+  flex-basis: 100%;
+}
+
+.right-column {
+  flex-basis: 100%;
+}
+
+.featured-btn {
+  border: none;
+  background-color: #38484d;
+  color: #fff;
+  border-radius: 20px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+}
+
+.register-btn {
+  border: none;
+  background-color: #38484d;
+  color: white;
+  border-radius: 20px;
+  padding: 15px;
+  text-decoration: none;
+  max-width: fit-content;
+  font-size: large;
+  margin-left: 40%;
+}
+
+.featured-btn:hover {
+  background-color: #618694;
+  color: #fff;
+}
+
+.info-register-btn {
+  background-color: #618694;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  padding: 20px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 80px;
+  text-decoration: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.info-register-btn:hover {
+  background-color: #38484d;
+  color: #fff;
+}
+
+.featured-locations-card p {
+  max-width: 500px;
+  font-size: large;
+  text-align: center;
+  margin-left: 15%;
+  margin-top: -15px;
+}
+
+/* iPhone 12 Pro */
+@media screen and (max-width: 500px) {
+  .featured-photographers-card {
+    max-width: 400px;
+    margin-left: -10px;
+    margin: 15px;
+    margin-top: 20px;
+    max-height: 300px;
+  }
+
+  .featured-locations-card {
+    max-width: 400px;
+    margin-left: -10px;
+    margin: 15px;
+    margin-top: 20px;
+    max-height: 300px;
+  }
+
+  .featured-title {
+    font-size: large;
+  }
+
+  .circle {
+    max-height: 80px;
+    max-width: 80px;
+  }
+
+  .photographer-info h3 {
+    font-size: small;
+  }
+
+  .photographer-info {
+    font-size: small;
+    max-width: fit-content;
+    padding: 1px;
+  }
+
+  .about-card {
+    max-width: 355px;
+    max-height: 300px;
+    margin-top: 680px;
+    margin-right: 20px;
+  }
+
+  .about-card h2 {
+    font-size: medium;
+    margin-top: -20px;
+  }
+
+  .about-card p {
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+
+  .info-register-btn {
+    padding: 10px;
+    margin-bottom: 40px;
+  }
+
+  .featured-locations-card p {
+    font-size: x-small;
+    font-weight: bold;
+    margin-top: -30px;
+    margin-left: 5%;
+  }
+}
+
+.navbar {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* REGISTER PAGE */
+.register-form {
+  background-color: #fff;
+  width: 40%;
+  height: 1300px;
+}
+
+.photo-bg img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 150px;
+  width: 40%;
+  margin-right: 150px;
+  height: 800px;
+}
+
+.memories-logo {
+  max-width: 150px;
+  margin-top: 40px;
+  margin-left: 35%;
+}
+
+.register-form h1 {
+  margin-top: 40px;
+  margin-left: 15%;
+  margin-bottom: 80px;
+}
+
+.register-form input {
+  display: flex;
+  margin-left: 20%;
+  margin-top: 40px;
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  border: none;
+  background-color: #eeeeee;
+}
+
+.register-form button {
+  margin-top: 100px;
+  margin-left: 20%;
+  background-color: #38484d;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  width: 400px;
+  padding: 20px;
+}
+
+.register-form button:hover {
+  background-color: #618694;
+}
+
+#errorMsg {
+  font-size: large;
+  text-align: center;
+  color: red;
+}
+
+#okMsg {
+  font-size: large;
+  text-align: center;
+  color: green;
+}
+
+@media screen and (max-width: 500px) {
+  .photo-bg img {
+    display: none;
+  }
+
+  .register-form {
+    width: 100%;
+  }
+
+  .register-form input {
+    width: 300px;
+    margin-left: 40px;
+  }
+
+  .register-form button {
+    width: 300px;
+    margin-left: 40px;
+    margin-top: 50px;
+  }
+
+  .memories-logo {
+    margin-left: 120px;
+  }
+
+  .register-form h1 {
+    width: 200px;
+    text-align: center;
+    margin-left: 80px;
+  }
+}
+
+/* LOGIN PAGE */
+.login-form {
+  background-color: #fff;
+  width: 40%;
+  height: 1300px;
+}
+
+.logout {
+  background-color: #fff;
+  text-align: center;
+}
+
+.login-form h1 {
+  margin-top: 40px;
+  margin-left: 15%;
+  margin-bottom: 80px;
+}
+
+.login-form input {
+  display: flex;
+  margin-left: 20%;
+  margin-top: 40px;
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  border: none;
+  background-color: #eeeeee;
+}
+
+.login-form button {
+  margin-top: 100px;
+  margin-left: 20%;
+  background-color: #38484d;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  width: 400px;
+  padding: 20px;
+}
+
+.login-form button:hover {
+  background-color: #618694;
+}
+
+@media screen and (max-width: 500px) {
+  .photo-bg img {
+    display: none;
+  }
+
+  .login-form {
+    width: 100%;
+  }
+
+  .login-form input {
+    width: 300px;
+    margin-left: 40px;
+  }
+
+  .login-form button {
+    width: 300px;
+    margin-left: 40px;
+    margin-top: 50px;
+  }
+
+  .memories-logo {
+    margin-left: 120px;
+  }
+
+  .login-form h1 {
+    width: 200px;
+    text-align: center;
+    margin-left: 80px;
+  }
+}
+
+/* USER PROFILE */
+.profile-pic {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  max-width: 300px;
+  max-height: 300px;
+  margin-left: 100px;
+  margin-top: 80px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.profile-pic img {
+  max-height: 50px;
+  border-radius: 50%;
+  margin: 10px;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
+.profile-pic p {
+  float: right;
+  margin-top: 25px;
+  margin-right: 80px;
+  font-size: large;
+}
+
+.user-info-card {
+  background-color: #fff;
+  max-width: 300px;
+  height: 380px;
+  margin-left: 100px;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.user-profile-page {
+  /* background-color: rgb(238, 238, 238); */
+  position: absolute;
+}
+
+.profile-menu {
+  list-style-type: none;
+  color: rgb(116, 116, 116);
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-options {
+  max-width: fit-content;
+  font-size: large;
+  padding: 2px;
+  padding-left: 15px;
+  order: 1;
+  margin-top: 30px;
+}
+
+.menu-options li {
+  display: flex;
+  align-items: center;
+}
+
+.menu-options p {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.menu-options:hover {
+  color: #38484d;
+  cursor: pointer;
+}
+
+.about-section {
+  background-color: #fff;
+  max-width: 1000px;
+  margin-left: 600px;
+  margin-top: -1020px;
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.about-section h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.photos-section {
+  background-color: #fff;
+  max-width: 1000px;
+  margin-left: 600px;
+  margin-top: 50px;
+  border-radius: 10px;
+  padding: 50px;
+}
+
+.about-section h2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.photos-section img {
+  max-width: 300px;
+}
+
+.photos-section h2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.col-md-4 {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.card-img img {
+  display: block;
+  margin: 20px;
+}
+
+.username-profile {
+  order: 1;
+  margin-left: 10px;
+}
+
+.other-card {
+  background-color: #fff;
+  width: 300px;
+  padding: 50px;
+  margin-top: 50px;
+  border-radius: 10px;
+  margin-left: 100px;
+}
+
+.other-card h5 {
+  margin-top: 0;
+}
+
+.other-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  color: rgb(116, 116, 116);
+}
+
+.other-container:hover {
+  color: #38484d;
+  cursor: pointer;
+}
+
+.other-container img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.other-container p {
+  margin: 0;
+}
+
+.book-now-profile button {
+  background-color: #38484d;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  margin-left: 900px;
+  margin-top: 100px;
+  width: 300px;
+  height: 100px;
+  font-size: xx-large;
+}
+
+.book-now-profile button:hover {
+  background-color: #fff;
+  color: #38484d;
+}
+
+.book-now-profile {
+  max-width: fit-content;
+  max-height: fit-content;
+}
+
+@media screen and (max-width: 500px) {
+  .profile-pic {
+    max-width: 300px;
+    margin-left: 35px;
+  }
+
+  .user-info-card {
+    max-width: 300px;
+    margin-left: 35px;
+  }
+
+  .about-section {
+    max-width: 300px;
+    margin-left: 35px;
+    margin-top: 80px;
+  }
+
+  .photos-section {
+    max-width: 300px;
+    margin-left: 35px;
+    margin-top: 80px;
+  }
+
+  .other-card {
+    display: none;
+  }
+
+  .photos-section img {
+    max-width: 200px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+
+  .book-now-profile button {
+    max-width: 200px;
+    margin-left: 80px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+}
+
+/* OUR PHOTOGRAPHERS PAGE */
+
+.photographerimg {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+#user-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#user {
+  width: 240px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+#user button {
+  margin-top: 10px;
+}
+
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+/* EDIT PROFILE */
+
+.edit-form {
+  background-color: #fff;
+  max-width: 1000px;
+  height: 400px;
+  margin-left: 25%;
+  border-radius: 0px 0px 10px 10px;
+  padding: 20px;
+}
+
+.edit-form input {
+  display: flex;
+  margin-left: 30%;
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  border: none;
+  background-color: #eeeeee;
+}
+
+.edit-form button {
+  margin-top: 120px;
+  margin-left: 30%;
+  background-color: #38484d;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  width: 400px;
+  padding: 20px;
+  margin-bottom: 40px;
+  font-size: larger;
+}
+
+.edit-form button:hover {
+  background-color: #fff;
+  color: #38484d;
+}
+
+.edit-form h3 {
+  font-size: large;
+  margin-left: 30%;
+  padding: 0;
+}
+
+.form-container {
+  margin-top: 30px;
+}
+
+.pfp-username-card {
+  background-color: #fff;
+  max-width: 1000px;
+  height: 400px;
+  margin-left: 25%;
+  border-radius: 10px 10px 0px 0px;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.pfp-username-card img {
+  border-radius: 50%;
+  max-width: 60%;
+  max-height: 60%;
+  margin-left: 40%;
+  margin-top: 80px;
+}
+
+.pfp-username-card p {
+  font-size: large;
+  margin-left: 44%;
+  margin-top: 20px;
+}
+
+.pfp-username-card h1 {
+  font-size: xx-large;
+  margin-left: 35%;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .edit-form {
+    max-width: 300px;
+    margin-left: 45px;
+  }
+
+  .pfp-username-card {
+    max-width: 300px;
+    margin-left: 45px;
+    max-height: 200px;
+  }
+
+  .pfp-username-card h1 {
+    font-size: x-large;
+    width: 300px;
+    margin-left: 20px;
+  }
+
+  .pfp-username-card img {
+    max-width: 60%;
+    max-width: 60%;
+    margin-left: 80px;
+    margin-top: 40px;
+  }
+
+  .pfp-username-card p {
+    margin-left: 55px;
+  }
+
+  .edit-form input {
+    width: 250px;
+    margin-left: 5px;
+  }
+
+  .edit-form h3 {
+    font-size: medium;
+    margin-left: 15px;
+  }
+
+  .edit-form button {
+    max-width: 150px;
+    padding: 12px;
+    margin-left: 50px;
+  }
+}

@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+#root > header > nav > a > img {
+  height: 5rem;
+  background-color: transparent;
+  color: transparent;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  margin-top: 4px;
+}
