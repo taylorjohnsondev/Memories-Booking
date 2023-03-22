@@ -51,7 +51,7 @@ export const About = () => {
                   moments that matter most. Book your session today and let us
                   help you create memories that will last a lifetime.
                 </p>
-              </div>
+              </div> 
             </div>
             <div className="col-12 order-md-0 col-md-4 col-xxl-4">
               <div className="text-center text-md-start me-md-3 me-xl-5">
@@ -111,7 +111,7 @@ export const About = () => {
                 <img
                   src="r1.jpg"
                   className="rounded-circle img-fluid"
-                  alt="picture of photograpger"
+                  alt="photographer"
                 />
               </div>
               <div className="card-body">
@@ -143,7 +143,7 @@ export const About = () => {
                 <img
                   src="r2.jpg"
                   className="rounded-circle img-fluid"
-                  alt="picture of photograpger"
+                  alt="photographer"
                 />
               </div>
               <div className="card-body">
@@ -174,7 +174,7 @@ export const About = () => {
                 <img
                   src="r3.jpg"
                   className="rounded-circle img-fluid"
-                  alt="picture of photograpger"
+                  alt="photographer"
                 />
               </div>
               <div className="card-body">
