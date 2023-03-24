@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-
+import AvatarUpload from "../components/AvatarUploader";
 function EditProfile() {
   let params = useParams();
   const navigate = useNavigate();
@@ -14,51 +14,6 @@ function EditProfile() {
   const [errorMsg, setErrorMsg] = useState("");
   const [okMsg, setOkMsg] = useState("");
   const token = savedUser.token;
-
-  function isLoggedIn() {
-    // add check to see if logged in
-    return true;
-  }
-
-  const profileImageContainer = document.querySelector(".pfp-username-card");
-
-  // event listener for when the user hovers over profile image
-  if (isLoggedIn()) {
-    profileImageContainer.addEventListener("mouseenter", () => {
-      const overlay = profileImageContainer.querySelector(
-        ".profile-image-overlay"
-      );
-      overlay.style.opacity = 1;
-    });
-
-    // event listener for when user is not hovering over profile image
-    profileImageContainer.addEventListener("mouseleave", () => {
-      const overlay = profileImageContainer.querySelector(
-        ".profile-image-overlay"
-      );
-      overlay.style.opacity = 0;
-    });
-
-    // event listener for when user selects a file
-    const uploadInput = profileImageContainer.querySelector(".upload-input");
-    uploadInput.addEventListener("change", (event) => {
-      const file = event.target.files[0];
-
-      if (file.type.startsWith("image/")) {
-        // add upload to server, using new database? not sure
-      } else {
-        alert("Please select an image file");
-      }
-    });
-  } else {
-    const overlay = profileImageContainer.querySelector(
-      ".profile-image-overlay"
-    );
-    overlay.style.display = "none";
-
-    const uploadInput = profileImageContainer.querySelector(".upload-input");
-    uploadInput.style.display = "none";
-  }
 
   useEffect(() => {
     async function fetchUser() {
@@ -112,17 +67,14 @@ function EditProfile() {
           <div className="pfp-username-card">
             <h1>Update your profile</h1>
             <img src={user.profile_image} alt="" />
+            <AvatarUpload/>
             <p>
               <strong>{"@" + user.username}</strong>
             </p>
-            <div className="profile-image-overlay">
-              <span className="upload-text">Upload photo</span>
-              <input type="file" className="upload-input" accept="image/*" />
-            </div>
           </div>
 
           <div className="edit-form">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="form-container">
               <h3>Change password</h3>
               <input
                 type="password"

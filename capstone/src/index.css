@@ -687,6 +687,9 @@ code {
 
 /* EDIT PROFILE */
 
+.AvatarUploader {
+  text-align: center;
+}
 .edit-form {
   background-color: #fff;
   max-width: 1000px;
@@ -731,7 +734,7 @@ code {
 }
 
 .form-container {
-  margin-top: 30px;
+  margin-top: 5vh
 }
 
 .pfp-username-card {
