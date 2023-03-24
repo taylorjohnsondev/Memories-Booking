@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const user = JSON.parse(localStorage.getItem("user"));
-const token = user.token;
  
 function AvatarUpload() {
   const [file, setFile] = useState();
-
+  const token = user.token;
+ 
   axios.interceptors.request.use(
     (config) => {
       config.headers.authorization = `Bearer ${token}`;
