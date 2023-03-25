@@ -1032,3 +1032,22 @@ select {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+@media screen and (max-width: 500px) {
+  .review-form form {
+    max-width: 300px;
+  }
+  .review-form h1 {
+    margin-left: 10px;
+  }
+  .review-form input[type="text"],
+  select {
+  margin-left: 20px;
+  }
+  .stars-container {
+    margin-left: 10px;
+  }
+  .review-form button[type="submit"] {
+    margin-left: 60px;
+  }
+}
