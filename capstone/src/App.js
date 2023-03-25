@@ -51,7 +51,7 @@ function App() {
             <Route exact path="/photographers" element={<Photographers />} />
             <Route exact path="/photographers/:uid" element={<UserProfile />} />
             <Route exact path="/about" element={<About />} />
-            <Route exact path="/booking" element={<Booking />} />
+            <Route exact path="/book/:uid" element={<Booking />} />
             <Route exact path="/gallery/:uid" element={<Gallery />} />
             <Route exact path="/review/:uid" element={<Review />} />
             <Route path="/404" element={<ErrorPage />} />
