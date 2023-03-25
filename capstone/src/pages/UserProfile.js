@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { FiEdit2 } from "react-icons/fi";
@@ -55,13 +56,16 @@ const UserProfile = () => {
               </li>
             </div>
 
-            <div className="menu-options">
+            <div className="menu-options reviews">
               <li>
                 <MdOutlineReviews />
                 <p>Reviews</p>
               </li>
             </div>
           </ul>
+          <Link className="book-now-btn" to="/booking">
+            Book now!
+          </Link>
         </div>
         <div className="other-photographers">
           <div className="other-card">

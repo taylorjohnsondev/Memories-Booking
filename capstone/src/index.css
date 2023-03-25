@@ -790,6 +790,28 @@ code {
   display: none;
 }
 
+.book-now-btn {
+  background-color: #38484d;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  text-decoration: none;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: 70px;
+}
+
+.book-now-btn:hover {
+  text-decoration: none;
+  background-color: #618694;
+  color: #fff;
+}
+
+.reviews {
+  margin-bottom: 60px;
+}
+
 @media screen and (max-width: 500px) {
   .edit-form {
     max-width: 300px;
@@ -832,6 +854,74 @@ code {
   .edit-form button {
     max-width: 150px;
     padding: 12px;
+    margin-left: 50px;
+  }
+}
+
+/* BOOKING PAGE */
+.booking-form {
+  display: flex;
+}
+
+.booking-photo {
+  flex: 1;
+}
+
+.booking-photo img {
+  max-width: 800px;
+  margin-left: 100px;
+}
+
+.booking-card {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 10px;
+  max-width: fit-content;
+  max-height: 700px;
+  padding: 40px;
+  margin-left: 200px;
+  margin-top: 100px;
+}
+
+.booking-card input {
+  border-radius: 10px;
+  padding: 20px;
+  width: 500px;
+  border: none;
+  background-color: #eeeeee;
+  margin-bottom: 20px;
+}
+
+.book-btn {
+  background-color: #38484d;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 180px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.book-btn:hover {
+  background-color: #618694;
+}
+
+@media screen and (max-width: 500px) {
+  .booking-photo {
+    display: none;
+  }
+  .booking-card {
+    max-width: 300px;
+    margin-left: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .booking-card input {
+    max-width: 240px;
+    margin-left: -10px;
+  }
+  .book-btn {
     margin-left: 50px;
   }
 }

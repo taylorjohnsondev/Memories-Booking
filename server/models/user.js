@@ -29,6 +29,9 @@ const userSchema = new mongoose.Schema({
       type: ObjectId,
     },
   ],
+  booking: {
+    type: ObjectId,
+  },
 });
 
 module.exports = User = mongoose.model("user", userSchema);
