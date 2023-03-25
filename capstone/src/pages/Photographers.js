@@ -24,7 +24,7 @@ const Photographers = () => {
                 src={user.profile_image}
                 alt=""
               />
-              { user.fullname}
+              {user.fullname}
               <br />
               {"@" + user.username}
               <br />
@@ -40,7 +40,6 @@ const Photographers = () => {
       </div>
       <br />
       <br />
-
       <div class="col-md-10 col-xl-8 text-center mx-auto">
         <h1 class="mb-4">Featured Locations</h1>
       </div>
@@ -141,7 +140,8 @@ const Photographers = () => {
           </div>
         </div>
       </div>
-    </div>
+    <br />
+  </div>
   );
 };
 
