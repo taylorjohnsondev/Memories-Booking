@@ -505,6 +505,10 @@ code {
   cursor: pointer;
 }
 
+.review-option li {
+  margin-bottom: 80px;
+}
+
 .about-section {
   background-color: #fff;
   max-width: 1000px;
@@ -932,4 +936,99 @@ code {
   .book-btn {
     margin-left: 50px;
   }
+}
+
+/* REVIEW PAGE */
+.review-cards {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.reviews {
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  flex-basis: center;
+  width: 300px;
+  height: 450px;
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+}
+
+.reviews p {
+  color: #38484d;
+  margin-top: 20px;
+
+}
+
+.reviews h5 {
+  color: #38484d;
+}
+
+.create-review-card {
+  margin-top: 40px;
+}
+
+.review-form form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.review-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.review-form input[type="text"],
+select {
+  width: 80%;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	margin-bottom: 20px;
+  margin-left: 50px;
+  margin-top: 20px;
+  background-color: #eeeeee;
+}
+
+.review-form button[type="submit"] {
+  background-color: #38484d;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 16px;
+	margin-top: 20px;
+	width: 50%;
+  margin-left: 120px;
+  margin-bottom: 20px;
+}
+
+.review-form button[type="submit"]:hover {
+  background-color: #618694;
+}
+
+.review-form h1 {
+  color: #38484d;
+  font-size: xx-large;
+  margin-left: 155px;
+}
+
+.stars-container {
+  margin-left: 140px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

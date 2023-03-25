@@ -58,10 +58,13 @@ const UserProfile = () => {
               </li>
             </div>
 
-            <div className="menu-options reviews">
+            <div className="menu-options review-option">
               <li>
                 <MdOutlineReviews />
-                <Link to="/review/:uid" className="menu-option-list">
+                <Link
+                  to="/review/:uid"
+                  className="menu-option-list review-option"
+                >
                   Reviews
                 </Link>
               </li>
