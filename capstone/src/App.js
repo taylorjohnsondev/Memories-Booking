@@ -8,6 +8,8 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import UserProfile from "./pages/UserProfile";
 import Booking from "./pages/Booking";
+import Review from "./pages/Review";
+import Gallery from "./pages/Gallery";
 import AuthedHeader from "./components/AuthedHeader";
 import { ErrorPage } from "./components/ErrorPage";
 import { Navigate } from "react-router-dom";
@@ -33,9 +35,11 @@ function App() {
               element={<EditProfile />}
             />
             <Route exact path="/about" element={<About />} />
+            <Route exact path="/gallery/:uid" element={<Gallery />} />
+            <Route exact path="/review/:uid" element={<Review />} />
             <Route path="/404" element={<ErrorPage />} />
             <Route path="*" element={<Navigate to="/404" />} />
-          </Routes>
+          </Routes> 
         </>
       ) : (
         // Guest user Routes
@@ -49,7 +53,9 @@ function App() {
             <Route exact path="/photographers" element={<Photographers />} />
             <Route exact path="/photographers/:uid" element={<UserProfile />} />
             <Route exact path="/about" element={<About />} />
-            <Route exact path="/booking" element={<Booking />} />
+            <Route exact path="/book/:uid" element={<Booking />} />
+            <Route exact path="/gallery/:uid" element={<Gallery />} />
+            <Route exact path="/review/:uid" element={<Review />} />
             <Route path="/404" element={<ErrorPage />} />
             <Route path="*" element={<Navigate to="/404" />} />
           </Routes>

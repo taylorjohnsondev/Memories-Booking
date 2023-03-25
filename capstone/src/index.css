@@ -355,9 +355,44 @@ code {
   height: 1300px;
 }
 
-.logout {
+.logout-container {
+  display: flex;
   background-color: #fff;
+  margin-left: 700px;
+  margin-top: 100px;
+  height: 600px;
+  width: 500px;
+  border-radius: 10px;
+}
+
+.logout-card {
+  font-size: x-large;
   text-align: center;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+.logout-card img {
+  max-width: 250px;
+  margin-left: 40px;
+  margin-top: -40px;
+  margin-bottom: 40px;
+}
+
+.logout-btn {
+  background-color: #c04a4a;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  width: 200px;
+  padding: 10px;
+  text-align: center;
+  font-size: large;
+  margin-top: 40px;
+}
+
+.logout-btn:hover {
+  background-color: #923232;
 }
 
 .login-form h1 {
@@ -459,7 +494,6 @@ code {
 }
 
 .user-profile-page {
-  /* background-color: rgb(238, 238, 238); */
   position: absolute;
 }
 
@@ -477,6 +511,7 @@ code {
   padding-left: 15px;
   order: 1;
   margin-top: 30px;
+  text-decoration: none;
 }
 
 .menu-options li {
@@ -494,11 +529,26 @@ code {
   cursor: pointer;
 }
 
+.menu-option-list {
+  text-decoration: none;
+  color: rgb(116, 116, 116);
+  margin-left: 20px;
+}
+
+.menu-option-list:hover {
+  color: #38484d;
+  cursor: pointer;
+}
+
+.review-option li {
+  margin-bottom: 80px;
+}
+
 .about-section {
   background-color: #fff;
   max-width: 1000px;
   margin-left: 600px;
-  margin-top: -1020px;
+  margin-top: -910px;
   padding: 50px;
   border-radius: 10px;
 }
@@ -549,7 +599,7 @@ code {
   margin-left: 10px;
 }
 
-.other-card {
+.rate-card {
   background-color: #fff;
   width: 300px;
   padding: 50px;
@@ -558,11 +608,11 @@ code {
   margin-left: 100px;
 }
 
-.other-card h5 {
-  margin-top: 0;
+.rate-card h5 {
+  margin-left: 30%;
 }
 
-.other-container {
+.rate-container {
   display: flex;
   align-items: center;
   margin-bottom: 40px;
@@ -570,19 +620,12 @@ code {
   color: rgb(116, 116, 116);
 }
 
-.other-container:hover {
+.rate-container:hover {
   color: #38484d;
   cursor: pointer;
 }
 
-.other-container img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.other-container p {
+.rate-container p {
   margin: 0;
 }
 
@@ -631,8 +674,9 @@ code {
     margin-top: 80px;
   }
 
-  .other-card {
-    display: none;
+  .rate-card {
+    max-width: 300px;
+    margin-left: 35px;
   }
 
   .photos-section img {
@@ -926,5 +970,119 @@ code {
   }
   .book-btn {
     margin-left: 50px;
+  }
+}
+
+/* REVIEW PAGE */
+.review-cards {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.reviews {
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  flex-basis: center;
+  width: 300px;
+  height: 450px;
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+}
+
+.reviews p {
+  color: #38484d;
+  margin-top: 20px;
+
+}
+
+.reviews h5 {
+  color: #38484d;
+}
+
+.create-review-card {
+  margin-top: 40px;
+}
+
+.review-form form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.review-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.review-form input[type="text"],
+select {
+  width: 80%;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	margin-bottom: 20px;
+  margin-left: 50px;
+  margin-top: 20px;
+  background-color: #eeeeee;
+}
+
+.review-form button[type="submit"] {
+  background-color: #38484d;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 16px;
+	margin-top: 20px;
+	width: 50%;
+  margin-left: 120px;
+  margin-bottom: 20px;
+}
+
+.review-form button[type="submit"]:hover {
+  background-color: #618694;
+}
+
+.review-form h1 {
+  color: #38484d;
+  font-size: xx-large;
+  margin-left: 155px;
+}
+
+.stars-container {
+  margin-left: 140px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .review-form form {
+    max-width: 300px;
+  }
+  .review-form h1 {
+    margin-left: 10px;
+  }
+  .review-form input[type="text"],
+  select {
+  margin-left: 20px;
+  }
+  .stars-container {
+    margin-left: 10px;
+  }
+  .review-form button[type="submit"] {
+    margin-left: 60px;
   }
 }

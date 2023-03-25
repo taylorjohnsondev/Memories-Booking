@@ -1,9 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { useNavigate, useParams } from "react-router-dom";
-
 import { FiEdit2 } from "react-icons/fi";
 import { RiGalleryLine } from "react-icons/ri";
 import { MdOutlineReviews } from "react-icons/md";
@@ -13,7 +11,6 @@ const UserProfile = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState([]);
   const savedUser = JSON.parse(localStorage.getItem("user"));
-
   useEffect(() => {
     async function fetchPhotographers() {
       const response = await axios.get(
@@ -52,52 +49,54 @@ const UserProfile = () => {
             <div className="menu-options">
               <li>
                 <RiGalleryLine />
-                <p>Gallery</p>
+                <div
+                  onClick={() => navigate(`/gallery/${params.uid}`)}
+                  className="menu-option-list"
+                >
+                  Gallery
+                </div>
               </li>
             </div>
 
-            <div className="menu-options reviews">
+            <div className="menu-options review-option">
               <li>
                 <MdOutlineReviews />
-                <p>Reviews</p>
+                <div
+                  onClick={() => navigate(`/review/${params.uid}`)}
+                  className="menu-option-list review-option"
+                >
+                  Reviews
+                </div>
               </li>
             </div>
           </ul>
-          <Link className="book-now-btn" to="/booking">
-            Book now!
-          </Link>
+          {savedUser ? (
+            ""
+          ) : (
+            <button
+              className="book-now-btn"
+              onClick={() => navigate(`/book/${params.uid}`)}
+            >
+              Book now!
+            </button>
+          )}
         </div>
         <div className="other-photographers">
-          <div className="other-card">
-            <h5>Other Photographers</h5>
-            <div className="other-container">
-              <img
-                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
-                alt=""
-              />
-              <p>Tonya Brown</p>
+          <div className="rate-card">
+            <h5>Rates</h5>
+            <div className="rate-container">
+              <p>Portrait - $125 /hr</p>
             </div>
-            <div className="other-container">
-              <img
-                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
-                alt=""
-              />
-              <p>Tommy Weathers</p>
+            <div className="rate-container">
+              <p>Wedding - $1,500</p>
             </div>
-            <div className="other-container">
-              <img
-                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
-                alt=""
-              />
-              <p>Cody Douglas</p>
+            <div className="rate-container">
+              <p>Newborn - $400</p>
             </div>
-            <div className="other-container">
-              <img
-                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
-                alt=""
-              />
-              <p>Ellie Williams</p>
+            <div className="rate-container">
+              <p>Senior - $100 /hr</p>
             </div>
+            <br />
           </div>
         </div>
         <main>
@@ -145,7 +144,9 @@ const UserProfile = () => {
               ""
             ) : (
               <div className="book-now-profile">
-                <button>Book now!</button>
+                <button onClick={() => navigate(`/book/${params.uid}`)}>
+                  Book now!
+                </button>
               </div>
             )}
           </section>

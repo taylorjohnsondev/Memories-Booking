@@ -33,6 +33,7 @@
     "react-icons": "^4.8.0",
     "react-toastify": "^9.1.1",
     "redux": "^4.2.1",
-    "redux-persist": "^6.0.0"
+    "redux-persist": "^6.0.0",
+    "stars-rating": "^1.1.0"
   }
 }
