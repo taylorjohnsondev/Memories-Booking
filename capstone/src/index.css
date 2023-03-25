@@ -355,9 +355,44 @@ code {
   height: 1300px;
 }
 
-.logout {
+.logout-container {
+  display: flex;
   background-color: #fff;
+  margin-left: 700px;
+  margin-top: 100px;
+  height: 600px;
+  width: 500px;
+  border-radius: 10px;
+}
+
+.logout-card {
+  font-size: x-large;
   text-align: center;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+.logout-card img {
+  max-width: 250px;
+  margin-left: 40px;
+  margin-top: -40px;
+  margin-bottom: 40px;
+}
+
+.logout-btn {
+  background-color: #c04a4a;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  width: 200px;
+  padding: 10px;
+  text-align: center;
+  font-size: large;
+  margin-top: 40px;
+}
+
+.logout-btn:hover {
+  background-color: #923232;
 }
 
 .login-form h1 {

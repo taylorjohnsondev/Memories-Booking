@@ -39,10 +39,15 @@ function Login() {
 
   if (user) {
     return (
-      <div className="logout">
-        @{user.username} Would you like to log out?
-        <br/>
-        <button className="featured-btn" onClick={handleLogout}>Log out</button>
+      <div className="logout-container">
+        <div className="logout-card">
+          <img src={require("./logout.jpg")} alt="" /> <br /> @{user.username},
+          are you <br /> sure you want to log out?
+          <br />
+          <button className="logout-btn" onClick={handleLogout}>
+            Log out
+          </button>
+        </div>
       </div>
     );
   }
@@ -50,7 +55,11 @@ function Login() {
   return (
     <div>
       <div className="login-form">
-        <img className="memories-logo" src="http://localhost:3000/memories1.png" alt="" />
+        <img
+          className="memories-logo"
+          src="http://localhost:3000/memories1.png"
+          alt=""
+        />
         <h1>Log in to your account!</h1>
         <form onSubmit={handleSubmit}>
           <input
