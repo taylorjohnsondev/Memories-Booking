@@ -68,35 +68,19 @@ const UserProfile = () => {
           </Link>
         </div>
         <div className="other-photographers">
-          <div className="other-card">
-            <h5>Other Photographers</h5>
-            <div className="other-container">
-              <img
-                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
-                alt=""
-              />
-              <p>Tonya Brown</p>
+          <div className="rate-card">
+            <h5>Rates</h5>
+            <div className="rate-container">
+              <p>Portrait - $125 /hr</p>
             </div>
-            <div className="other-container">
-              <img
-                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
-                alt=""
-              />
-              <p>Tommy Weathers</p>
+            <div className="rate-container">
+              <p>Wedding - $1,500</p>
             </div>
-            <div className="other-container">
-              <img
-                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
-                alt=""
-              />
-              <p>Cody Douglas</p>
+            <div className="rate-container">
+              <p>Newborn - $400</p>
             </div>
-            <div className="other-container">
-              <img
-                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
-                alt=""
-              />
-              <p>Ellie Williams</p>
+            <div className="rate-container">
+              <p>Senior - $100 /hr</p>
             </div>
           </div>
         </div>

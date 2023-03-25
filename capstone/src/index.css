@@ -498,7 +498,7 @@ code {
   background-color: #fff;
   max-width: 1000px;
   margin-left: 600px;
-  margin-top: -1020px;
+  margin-top: -910px;
   padding: 50px;
   border-radius: 10px;
 }
@@ -549,7 +549,7 @@ code {
   margin-left: 10px;
 }
 
-.other-card {
+.rate-card {
   background-color: #fff;
   width: 300px;
   padding: 50px;
@@ -558,11 +558,11 @@ code {
   margin-left: 100px;
 }
 
-.other-card h5 {
-  margin-top: 0;
+.rate-card h5 {
+  margin-left: 30%;
 }
 
-.other-container {
+.rate-container {
   display: flex;
   align-items: center;
   margin-bottom: 40px;
@@ -570,19 +570,12 @@ code {
   color: rgb(116, 116, 116);
 }
 
-.other-container:hover {
+.rate-container:hover {
   color: #38484d;
   cursor: pointer;
 }
 
-.other-container img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.other-container p {
+.rate-container p {
   margin: 0;
 }
 
@@ -631,8 +624,9 @@ code {
     margin-top: 80px;
   }
 
-  .other-card {
-    display: none;
+  .rate-card {
+    max-width: 300px;
+    margin-left: 35px;
   }
 
   .photos-section img {
