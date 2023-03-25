@@ -662,7 +662,7 @@ code {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 90%;
   margin: 0 auto;
 }
 
