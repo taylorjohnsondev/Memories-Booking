@@ -60,12 +60,12 @@ const UserProfile = () => {
             <div className="menu-options review-option">
               <li>
                 <MdOutlineReviews />
-                <Link
-                  to="/review/:uid"
+                <div
+                  onClick={() => navigate(`/review/${params.uid}`)}
                   className="menu-option-list review-option"
                 >
                   Reviews
-                </Link>
+                </div>
               </li>
             </div>
           </ul>
