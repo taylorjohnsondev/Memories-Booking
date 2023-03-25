@@ -660,7 +660,7 @@ code {
 
 #user-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   max-width: 90%;
   margin: 0 auto;
@@ -668,9 +668,12 @@ code {
 
 #user {
   width: 240px;
+  flex-basis: center;
   text-align: center;
   margin-bottom: 20px;
   margin-top: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
   padding: 20px;
   border-radius: 10px;
   background-color: white;
