@@ -1,9 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { useNavigate, useParams } from "react-router-dom";
-
 import { FiEdit2 } from "react-icons/fi";
 import { RiGalleryLine } from "react-icons/ri";
 import { MdOutlineReviews } from "react-icons/md";
@@ -51,9 +49,12 @@ const UserProfile = () => {
             <div className="menu-options">
               <li>
                 <RiGalleryLine />
-                <Link to="/gallery/:uid" className="menu-option-list">
+                <div
+                  onClick={() => navigate(`/gallery/${params.uid}`)}
+                  className="menu-option-list"
+                >
                   Gallery
-                </Link>
+                </div>
               </li>
             </div>
 

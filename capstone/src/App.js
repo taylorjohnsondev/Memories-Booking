@@ -35,9 +35,11 @@ function App() {
               element={<EditProfile />}
             />
             <Route exact path="/about" element={<About />} />
+            <Route exact path="/gallery/:uid" element={<Gallery />} />
+            <Route exact path="/review/:uid" element={<Review />} />
             <Route path="/404" element={<ErrorPage />} />
             <Route path="*" element={<Navigate to="/404" />} />
-          </Routes>
+          </Routes> 
         </>
       ) : (
         // Guest user Routes
