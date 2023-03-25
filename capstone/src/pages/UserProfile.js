@@ -52,14 +52,18 @@ const UserProfile = () => {
             <div className="menu-options">
               <li>
                 <RiGalleryLine />
-                <p>Gallery</p>
+                <Link to="/gallery/:uid" className="menu-option-list">
+                  Gallery
+                </Link>
               </li>
             </div>
 
             <div className="menu-options reviews">
               <li>
                 <MdOutlineReviews />
-                <p>Reviews</p>
+                <Link to="/review/:uid" className="menu-option-list">
+                  Reviews
+                </Link>
               </li>
             </div>
           </ul>

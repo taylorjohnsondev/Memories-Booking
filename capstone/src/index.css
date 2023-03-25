@@ -459,7 +459,6 @@ code {
 }
 
 .user-profile-page {
-  /* background-color: rgb(238, 238, 238); */
   position: absolute;
 }
 
@@ -477,6 +476,7 @@ code {
   padding-left: 15px;
   order: 1;
   margin-top: 30px;
+  text-decoration: none;
 }
 
 .menu-options li {
@@ -490,6 +490,17 @@ code {
 }
 
 .menu-options:hover {
+  color: #38484d;
+  cursor: pointer;
+}
+
+.menu-option-list {
+  text-decoration: none;
+  color: rgb(116, 116, 116);
+  margin-left: 20px;
+}
+
+.menu-option-list:hover {
   color: #38484d;
   cursor: pointer;
 }
