@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
+import { useParams, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import axios from "axios";
 
 const colors = {
   orange: "#FFBA5A",
@@ -9,6 +12,17 @@ const colors = {
 const Review = () => {
   const [currentValue, setCurrentValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
+  let params = useParams();
+  const [user, setUser] = useState([]);
+  useEffect(() => {
+    async function fetchPhotographers() {
+      const response = await axios.get(
+        `http://localhost:3001/photographers/${params.uid}`
+      );
+      setUser(response.data);
+    }
+    fetchPhotographers();
+  }, [params.uid]);
 
   const handleClick = (value) => {
     setCurrentValue(value);
@@ -29,7 +43,10 @@ const Review = () => {
       <div className="create-review-card">
         <div className="review-form">
           <form>
-            <h1>Leave a Review!</h1>
+            <h1>
+              {" "}
+              Review {user.fullname ? user.fullname : "@" + user.username}
+            </h1>
             <input
               type="text"
               id="review"
