@@ -13,7 +13,6 @@ const UserProfile = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState([]);
   const savedUser = JSON.parse(localStorage.getItem("user"));
-
   useEffect(() => {
     async function fetchPhotographers() {
       const response = await axios.get(
@@ -67,9 +66,16 @@ const UserProfile = () => {
               </li>
             </div>
           </ul>
-          <Link className="book-now-btn" to="/booking">
-            Book now!
-          </Link>
+          {savedUser ? (
+            ""
+          ) : (
+            <button
+              className="book-now-btn"
+              onClick={() => navigate(`/book/${params.uid}`)}
+            >
+              Book now!
+            </button>
+          )}
         </div>
         <div className="other-photographers">
           <div className="rate-card">
@@ -86,6 +92,7 @@ const UserProfile = () => {
             <div className="rate-container">
               <p>Senior - $100 /hr</p>
             </div>
+            <br />
           </div>
         </div>
         <main>
@@ -133,7 +140,9 @@ const UserProfile = () => {
               ""
             ) : (
               <div className="book-now-profile">
-                <button>Book now!</button>
+                <button onClick={() => navigate(`/book/${params.uid}`)}>
+                  Book now!
+                </button>
               </div>
             )}
           </section>

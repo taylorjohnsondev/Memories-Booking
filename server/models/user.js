@@ -1,6 +1,33 @@
 const mongoose = require("mongoose");
 const { ObjectId } = require("mongodb");
 
+const bookingSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  phone: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: String,
+    required: true,
+  },
+  time: {
+    type: String,
+    required: true,
+  },
+  comments: {
+    type: String,
+    required: true,
+  },
+}); 
+
 const userSchema = new mongoose.Schema({
   fullname: {
     type: String,
@@ -29,9 +56,7 @@ const userSchema = new mongoose.Schema({
       type: ObjectId,
     },
   ],
-  booking: {
-    type: ObjectId,
-  },
+  bookings: [bookingSchema],
 });
 
 module.exports = User = mongoose.model("user", userSchema);
