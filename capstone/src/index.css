@@ -456,6 +456,22 @@ code {
     text-align: center;
     margin-left: 80px;
   }
+  .logout-container {
+    width: 300px;
+    margin-left: 45px;
+    margin-top: 70px;
+  }
+  .logout-card img {
+    margin-left: 10px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .logout-card {
+    font-size: larger;
+    margin-left: 20px;
+    width: fit-content;
+    height: fit-content;
+  }
 }
 
 /* USER PROFILE */
