@@ -72,20 +72,21 @@ const Review = () => {
     <>
       {savedUser && savedUser.uid === params.uid ? (
         <>
-          <div className="pfp-username-card">
-            <strong>
-              {user.fullname ? user.fullname : "@" + user.username}, here you
-              can look at your reviews.
-            </strong>
-
+          <div>
+            <div>
+              <p className="user-review-title">
+                {user.fullname ? user.fullname : "@" + user.username}'s reviews!
+              </p>
+            </div>
             <div className="review-cards">
               {reviews &&
                 reviews.map((review) => (
                   <div className="reviews" key={review._id}>
-                    <p>{review.name}</p>
+                    <p className="review-card-name">{review.name}</p>
                     <p>{review.comment}</p>
-                    <p>
-                      {review.stars} <FaStar />
+                    <p className="review-card-stars">
+                      {review.stars} <FaStar size={30} color={colors.orange} />
+                      stars!
                     </p>
                   </div>
                 ))}
@@ -144,10 +145,11 @@ const Review = () => {
             {reviews &&
               reviews.map((review) => (
                 <div className="reviews" key={review._id}>
-                  <p>{review.name}</p>
+                  <p className="review-card-name">{review.name}</p>
                   <p>{review.comment}</p>
-                  <p>
-                    {review.stars} <FaStar />
+                  <p className="review-card-stars">
+                    {review.stars} <FaStar size={30} color={colors.orange} />{" "}
+                    stars!
                   </p>
                 </div>
               ))}

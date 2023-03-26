@@ -67,7 +67,7 @@ function EditProfile() {
           <div className="pfp-username-card">
             <h1>Update your profile</h1>
             <img src={user.profile_image} alt="" />
-            <AvatarUpload/>
+            <AvatarUpload />
             <p>
               <strong>{"@" + user.username}</strong>
             </p>

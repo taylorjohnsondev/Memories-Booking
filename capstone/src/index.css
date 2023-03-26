@@ -916,7 +916,8 @@ code {
   }
 
   .pfp-username-card p {
-    margin-left: 55px;
+    margin-left: 30%;
+    margin-top: -170px;
   }
 
   .edit-form input {
@@ -933,6 +934,10 @@ code {
     max-width: 150px;
     padding: 12px;
     margin-left: 50px;
+  }
+  .AvatarUploader input {
+    max-width: 100px;
+    margin-top: 10px;
   }
 }
 
@@ -1021,7 +1026,7 @@ code {
   text-align: center;
   flex-basis: center;
   width: 300px;
-  height: 450px;
+  height: fit-content;
   margin-top: 40px;
   margin-left: 20px;
   margin-right: 20px;
@@ -1099,6 +1104,25 @@ select {
   margin-bottom: 20px;
 }
 
+.review-card-name {
+  font-size: larger;
+  font-weight: 700;
+  color: #38484d;
+}
+
+.user-review-title {
+  font-size: larger;
+  font-weight: bold;
+  background-color: #fff;
+  width: fit-content;
+  height: fit-content;
+  padding: 30px;
+  border-radius: 20px;
+  margin-top: 50px;
+  margin-left: 40%;
+  color: #38484d;
+}
+
 @media screen and (max-width: 500px) {
   .review-form form {
     max-width: 300px;
@@ -1115,5 +1139,8 @@ select {
   }
   .review-form button[type="submit"] {
     margin-left: 60px;
+  }
+  .user-review-title {
+    margin-left: 55px;
   }
 }
