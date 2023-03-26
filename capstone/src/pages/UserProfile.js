@@ -106,40 +106,44 @@ const UserProfile = () => {
               <p>{user.bio}</p>
             </div>
             <div className="photos-section">
+                           
               <h2>Featured Photos</h2>
               <div className="row">
-                <div className="col-md-4">
-                  <div className="card-content">
-                    <div className="card-img">
-                      <img
-                        src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="card-content">
-                    <div className="card-img">
-                      <img
-                        src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="card-content">
-                    <div className="card-img">
-                      <img
-                        src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
+      <img
+              src="https://images.pexels.com/photos/4942883/pexels-photo-4942883.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              alt="Column 1A"
+           />
+        <img
+              src="https://images.pexels.com/photos/4942920/pexels-photo-4942920.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Column 1B"
+            />
+      </div>
+
+      <div className="col-lg-4 mb-4 mb-lg-0">
+      <img
+              src="https://images.pexels.com/photos/15930856/pexels-photo-15930856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Columb 2A"
+            />
+        <img
+              src="https://images.pexels.com/photos/15895541/pexels-photo-15895541.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Columb 2B"
+            />
+      </div>
+     
+      <div className="col-lg-4 mb-4 mb-lg-0">
+      <img
+              src="https://images.pexels.com/photos/953266/pexels-photo-953266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Columb 3A"
+            />
+        <img
+              src="https://images.pexels.com/photos/15964784/pexels-photo-15964784.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Columb 3B"
+           />
+      </div>
+    </div>
+   </div>
+           
             {savedUser ? (
               ""
             ) : (
@@ -152,6 +156,7 @@ const UserProfile = () => {
           </section>
         </main>
       </div>
+      <br/>
     </div>
   );
 };
