@@ -26,7 +26,22 @@ const bookingSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-}); 
+});
+
+const reviewSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  }, 
+  comment: {
+    type: String,
+    required: true,
+  },
+  stars: {
+    type: Number,
+    required: true,
+  },
+});
 
 const userSchema = new mongoose.Schema({
   fullname: {
@@ -57,6 +72,7 @@ const userSchema = new mongoose.Schema({
     },
   ],
   bookings: [bookingSchema],
+  reviews: [reviewSchema], 
 });
 
 module.exports = User = mongoose.model("user", userSchema);

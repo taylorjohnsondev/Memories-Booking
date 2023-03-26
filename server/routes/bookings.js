@@ -31,7 +31,8 @@ router.post("/:uid", async (req, res) => {
     if (!book) {
       return res.status(404).send("User not found");
     }
-    res.json(book);
+    res.status(200);
+    res.json("Book Success");  
   } catch (err) {
     res.send(err);
   }

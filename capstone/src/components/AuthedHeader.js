@@ -9,10 +9,10 @@ function AuthedHeader() {
       <nav className="navbar navbar-expand-lg navbar-white bg-white">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            <img
-              src="http://localhost:3000/memories1.png"
+          <img
+              src={require("./memories1.png")}
               alt="Memories Logo"
-            />
+            /> 
           </Link>
           <button
             className="navbar-toggler"

@@ -7,7 +7,7 @@ function Header() {
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             <img
-              src="http://localhost:3000/memories1.png"
+              src={require("./memories1.png")}
               alt="Memories Logo"
             />
           </Link>
