@@ -5,21 +5,29 @@ import { useNavigate, useParams } from "react-router-dom";
 import { FiEdit2 } from "react-icons/fi";
 import { RiGalleryLine } from "react-icons/ri";
 import { MdOutlineReviews } from "react-icons/md";
+import Loading from "../components/LoadingBar/Loading";
 
 const UserProfile = () => {
   let params = useParams();
   const navigate = useNavigate();
   const [user, setUser] = useState([]);
+  const [loading, setLoading] = useState(true);
   const savedUser = JSON.parse(localStorage.getItem("user"));
+
   useEffect(() => {
     async function fetchPhotographers() {
       const response = await axios.get(
         `http://localhost:3001/photographers/${params.uid}`
       );
       setUser(response.data);
+      setLoading(false);
     }
     fetchPhotographers();
   }, [params.uid]);
+
+  if (loading) {
+    return <Loading />;
+  } 
 
   return (
     <div className="user-profile-page">
@@ -106,44 +114,43 @@ const UserProfile = () => {
               <p>{user.bio}</p>
             </div>
             <div className="photos-section">
-                           
               <h2>Featured Photos</h2>
               <div className="row">
-      <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
-      <img
-              src="https://images.pexels.com/photos/4942883/pexels-photo-4942883.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              alt="Column 1A"
-           />
-        <img
-              src="https://images.pexels.com/photos/4942920/pexels-photo-4942920.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="Column 1B"
-            />
-      </div>
+                <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                  <img
+                    src="https://images.pexels.com/photos/4942883/pexels-photo-4942883.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    alt="Column 1A"
+                  />
+                  <img
+                    src="https://images.pexels.com/photos/4942920/pexels-photo-4942920.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Column 1B"
+                  />
+                </div>
 
-      <div className="col-lg-4 mb-4 mb-lg-0">
-      <img
-              src="https://images.pexels.com/photos/15930856/pexels-photo-15930856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="Columb 2A"
-            />
-        <img
-              src="https://images.pexels.com/photos/15895541/pexels-photo-15895541.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="Columb 2B"
-            />
-      </div>
-     
-      <div className="col-lg-4 mb-4 mb-lg-0">
-      <img
-              src="https://images.pexels.com/photos/953266/pexels-photo-953266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="Columb 3A"
-            />
-        <img
-              src="https://images.pexels.com/photos/15964784/pexels-photo-15964784.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="Columb 3B"
-           />
-      </div>
-    </div>
-   </div>
-           
+                <div className="col-lg-4 mb-4 mb-lg-0">
+                  <img
+                    src="https://images.pexels.com/photos/15930856/pexels-photo-15930856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Columb 2A"
+                  />
+                  <img
+                    src="https://images.pexels.com/photos/15895541/pexels-photo-15895541.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Columb 2B"
+                  />
+                </div>
+
+                <div className="col-lg-4 mb-4 mb-lg-0">
+                  <img
+                    src="https://images.pexels.com/photos/953266/pexels-photo-953266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Columb 3A"
+                  />
+                  <img
+                    src="https://images.pexels.com/photos/15964784/pexels-photo-15964784.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Columb 3B"
+                  />
+                </div>
+              </div>
+            </div>
+
             {savedUser ? (
               ""
             ) : (
@@ -156,7 +163,7 @@ const UserProfile = () => {
           </section>
         </main>
       </div>
-      <br/>
+      <br />
     </div>
   );
 };

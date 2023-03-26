@@ -3,6 +3,7 @@ import { FaStar } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
+import Loading from "../components/LoadingBar/Loading";
 
 const colors = {
   orange: "#FFBA5A",
@@ -19,6 +20,7 @@ const Review = () => {
   const [reviews, setReviews] = useState([]);
   const [hoverValue, setHoverValue] = useState(undefined);
   const savedUser = JSON.parse(localStorage.getItem("user"));
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchPhotographers() {
@@ -27,6 +29,7 @@ const Review = () => {
       );
       setUser(response.data);
       setReviews(response.data.reviews || []);
+      setLoading(false);
     }
     fetchPhotographers();
   }, [params.uid, reviews]);
@@ -46,6 +49,10 @@ const Review = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    if (loading) {
+      return <Loading />;
+    }
 
     try {
       await axios.post(`http://localhost:3001/review/${params.uid}`, {
@@ -81,7 +88,7 @@ const Review = () => {
                       {review.stars} <FaStar />
                     </p>
                   </div>
-                ))} 
+                ))}
             </div>
           </div>
         </>

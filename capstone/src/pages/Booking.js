@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import Loading from "../components/LoadingBar/Loading";
 const Booking = () => {
   let params = useParams();
 
@@ -15,16 +16,23 @@ const Booking = () => {
   const [time, setTime] = useState("");
   const [comments, setComments] = useState("");
 
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     async function fetchPhotographers() {
       const response = await axios.get(
         `http://localhost:3001/photographers/${params.uid}`
       );
       setUser(response.data);
+      setLoading(false);
     }
     fetchPhotographers();
   }, [params.uid]);
 
+  if (loading) {
+    return <Loading />;
+  }
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
 

@@ -1,17 +1,25 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Loading from "../components/LoadingBar/Loading";
+
 const Photographers = () => {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchPhotographers() {
       const response = await axios.get("http://localhost:3001/photographers");
       setUsers(response.data);
+      setLoading(false)
     }
     fetchPhotographers();
   });
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div>
@@ -140,8 +148,8 @@ const Photographers = () => {
           </div>
         </div>
       </div>
-    <br />
-  </div>
+      <br />
+    </div>
   );
 };
 
