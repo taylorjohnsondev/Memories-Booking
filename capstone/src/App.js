@@ -14,6 +14,7 @@ import AuthedHeader from "./components/AuthedHeader";
 import { ErrorPage } from "./components/ErrorPage";
 import { Navigate } from "react-router-dom";
 import EditProfile from "./pages/EditProfile";
+import MyBookings from "./pages/MyBookings";
 const user = JSON.parse(localStorage.getItem("user"));
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
             <Route exact path="/about" element={<About />} />
             <Route exact path="/gallery/:uid" element={<Gallery />} />
             <Route exact path="/review/:uid" element={<Review />} />
+            <Route exact path="/book/:uid" element={<MyBookings />} />
             <Route path="/404" element={<ErrorPage />} />
             <Route path="*" element={<Navigate to="/404" />} />
           </Routes> 

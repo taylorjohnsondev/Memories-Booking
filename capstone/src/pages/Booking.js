@@ -14,8 +14,8 @@ const Booking = () => {
   const [phone, setPhone] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
+  const [location, setLocation] = useState("");
   const [comments, setComments] = useState("");
-
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const Booking = () => {
   if (loading) {
     return <Loading />;
   }
-  
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -42,6 +42,7 @@ const Booking = () => {
         email,
         phone,
         date,
+        location,
         time,
         comments,
       });
@@ -96,6 +97,15 @@ const Booking = () => {
             placeholder="Date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
+          ></input>
+          <br />
+          <input
+            type="text"
+            id="location"
+            name="location"
+            placeholder="Location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
           ></input>
           <br />
           <input

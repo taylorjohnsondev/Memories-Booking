@@ -9,10 +9,7 @@ function AuthedHeader() {
       <nav className="navbar navbar-expand-lg navbar-white bg-white">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-          <img
-              src={require("./memories1.png")}
-              alt="Memories Logo"
-            /> 
+            <img src={require("./memories1.png")} alt="Memories Logo" />
           </Link>
           <button
             className="navbar-toggler"
@@ -33,8 +30,13 @@ function AuthedHeader() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/about">
-                  About Us
+                <Link className="nav-link" to={`/book/${user.uid}`}>
+                  Bookings
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={`/review/${user.uid}`}>
+                  Reviews
                 </Link>
               </li>
               <li className="nav-item">
