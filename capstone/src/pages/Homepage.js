@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export const Homepage = () => {
+  const user = JSON.parse(localStorage.getItem("user"));
+
   return (
     <div>
       {/* FERNANDO */}
@@ -155,24 +157,38 @@ export const Homepage = () => {
           </div>
         </div>
         <div className="right-column">
-          <div className="featured-locations-card">
-            <h2 className="featured-title">Are you a photographer?</h2>
-            <br />
-            <p>
-              Joining Memories Booking will greatly enhance your visibility as a
-              photographer and make it easier for clients to find and book your
-              services. By signing up, you'll have access to a platform that
-              connects you with potential clients, simplifies the booking
-              process, and allows you to showcase your portfolio and
-              professional credentials. Don't miss out on the opportunity to
-              expand your client base and streamline your workflow – sign up
-              with us today!
-            </p>
-            <br />
-            <Link className="register-btn" to="/register">
-              Register
-            </Link>
-          </div>
+          {user ? (
+            <>
+              <div className="featured-locations-card">
+                <h2 className="featured-title">Welcome @{user.username}</h2>
+                <br />
+                <p>You are already a registered photographer</p>
+                <br />
+                <Link className="register-btn" to={`photographers/${user.uid}`}>
+                  View my profile
+                </Link>
+              </div>
+            </>
+          ) : (
+            <div className="featured-locations-card">
+              <h2 className="featured-title">Are you a photographer?</h2>
+              <br />
+              <p>
+                Joining Memories Booking will greatly enhance your visibility as
+                a photographer and make it easier for clients to find and book
+                your services. By signing up, you'll have access to a platform
+                that connects you with potential clients, simplifies the booking
+                process, and allows you to showcase your portfolio and
+                professional credentials. Don't miss out on the opportunity to
+                expand your client base and streamline your workflow – sign up
+                with us today!
+              </p>
+              <br />
+              <Link className="register-btn" to="/register">
+                Register
+              </Link>
+            </div>
+          )}
         </div>
         <div className="about-card">
           <h2>
@@ -187,9 +203,9 @@ export const Homepage = () => {
                 Browse Now!
               </Link>
               <img
-                src="http://localhost:3000/memories1.png"
+                src={require("../components/memories1.png")}
                 alt="Memories Logo"
-              />
+              /> 
             </div>
           </h2>
         </div>

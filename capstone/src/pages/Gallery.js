@@ -19,7 +19,7 @@ const Gallery = () => {
       setPhotos(response.data.photos);
     }
     fetchUser();
-  }, [params.uid]);
+  }, [params.uid, photos]);
 
   return (
     <>
@@ -29,12 +29,14 @@ const Gallery = () => {
           Upload a photo?
           <GalleryUpload />
           <div className="photos-section">
+          <div className="row">
             {photos &&
               photos.map((photo) => (
-                <div key={photo._id}>
+                <div className="col-lg-4 mb-4 mb-lg-0" key={photo._id}>
                   <img src={photo} alt="" />
                 </div>
               ))}
+              </div>
           </div>
         </>
       ) : (

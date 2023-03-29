@@ -40,15 +40,15 @@ function AuthedHeader() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to={`/photographers/${user.uid}`}>
-                  My Profile
+                <Link className="nav-link" to={`/gallery/${user.uid}`}>
+                  Gallery
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/login">
-                  Logout
-                </Link>
-              </li>
+                <Link className="nav-link" to={`/photographers/${user.uid}`}>
+                  My Profile
+                </Link> 
+              </li>  
             </ul>
           </div>
         </div>
