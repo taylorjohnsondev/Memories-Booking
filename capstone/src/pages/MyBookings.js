@@ -23,6 +23,17 @@ const MyBookings = () => {
       setLoading(false);
     }
     fetchPhotographers();
+  }, [params.uid]);
+
+  useEffect(() => {
+    async function fetchBookings() {
+      const response = await axios.get(
+        `http://localhost:3001/book/${params.uid}`
+      );
+      setBookings(response.data.bookings || []);
+      setLoading(false);
+    }
+    fetchBookings();
   }, [params.uid, bookings]);
 
   axios.interceptors.request.use(

@@ -6,19 +6,24 @@ const requireAuth = require("../middleware/requireAuth");
 
 router.get("/", async (req, res) => {
   try {
-    const photographers = await User.find();
+    const photographers = await User.find()
+      .select("-password")
+      .select("-bookings");
     res.status(200).json(photographers);
   } catch (err) {
     console.log(err);
     res.status(404);
   }
-});
+}); 
 
 router.get("/:uid", async (req, res) => {
   try {
-    User.findById(req.params.uid).then((user) => {
-      return res.status(200).json(user);
-    });
+    User.findById(req.params.uid)
+      .select("-password")
+      .select("-bookings")
+      .then((user) => {
+        return res.status(200).json(user);
+      });
   } catch (err) {
     console.log(err);
     res.status(404);
