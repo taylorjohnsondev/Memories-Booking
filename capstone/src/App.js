@@ -15,12 +15,15 @@ import { ErrorPage } from "./components/ErrorPage";
 import { Navigate } from "react-router-dom";
 import EditProfile from "./pages/EditProfile";
 import MyBookings from "./pages/MyBookings";
-const user = JSON.parse(localStorage.getItem("user"));
+import useAuth from "./hooks/useAuth";
 
 function App() {
-  return (
+  const { isAuth } = useAuth();
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  return ( 
     <>
-      {user ? (
+      {isAuth && user ? (
         //Logged in Routes
         <>
           <AuthedHeader />
@@ -41,7 +44,7 @@ function App() {
             <Route exact path="/book/:uid" element={<MyBookings />} />
             <Route path="/404" element={<ErrorPage />} />
             <Route path="*" element={<Navigate to="/404" />} />
-          </Routes> 
+          </Routes>
         </>
       ) : (
         // Guest user Routes

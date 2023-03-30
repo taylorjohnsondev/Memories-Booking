@@ -120,7 +120,7 @@ const UserProfile = () => {
               <h2>About Me</h2>
               <p>{user.bio}</p>
             </div>
-            <div className="photos-section">
+            <div className="photos-section"> 
               <h2>Recent Photos</h2>
               {recentphotos &&  
                 recentphotos.map((photo, index) => (

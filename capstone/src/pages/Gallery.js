@@ -29,22 +29,22 @@ const Gallery = () => {
           Upload a photo?
           <GalleryUpload />
           <div className="photos-section">
-          <div className="row">
-            {photos &&
-              photos.map((photo) => (
-                <div className="col-lg-4 mb-4 mb-lg-0" key={photo._id}>
-                  <img src={photo} alt="" />
-                </div>
-              ))}
-              </div>
+            <div className="row">
+              {photos &&
+                photos.map((photo, index) => (
+                  <div className="col-lg-4 mb-4 mb-lg-0" key={index}>
+                    <img src={photo} alt="" />
+                  </div>
+                ))}
+            </div>
           </div>
         </>
       ) : (
         <div className="photos-section">
           {user.username}'s Gallery
           {photos &&
-            photos.map((photo) => (
-              <div key={photo._id}>
+            photos.map((photo, index) => (
+              <div key={index}>
                 <img src={photo} alt="" />
               </div>
             ))}

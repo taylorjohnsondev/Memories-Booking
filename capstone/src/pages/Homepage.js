@@ -162,11 +162,8 @@ export const Homepage = () => {
               <div className="featured-locations-card">
                 <h2 className="featured-title">Welcome @{user.username}</h2>
                 <br />
-                <p>You are already a registered photographer</p>
+                <p>You are already a registered photographer</p> 
                 <br />
-                <Link className="register-btn" to={`photographers/${user.uid}`}>
-                  View my profile
-                </Link>
               </div>
             </>
           ) : (
@@ -205,7 +202,7 @@ export const Homepage = () => {
               <img
                 src={require("../components/memories1.png")}
                 alt="Memories Logo"
-              /> 
+              />
             </div>
           </h2>
         </div>
