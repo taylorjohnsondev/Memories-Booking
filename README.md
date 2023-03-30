@@ -1,4 +1,4 @@
-MERN group project, made by Taylor Johnson, Alyssa Wiser, Fernando Puente, and Ismail Kareem.
+MERN group project, made by Taylor Johnson, Alyssa Wiser, and Fernando Puente.
 
 
 SPRINT WEEK 03/16/2023
