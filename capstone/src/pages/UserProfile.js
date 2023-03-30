@@ -46,17 +46,26 @@ const UserProfile = () => {
         <div className="user-info-card">
           <ul className="profile-menu">
             {savedUser && savedUser.uid === params.uid ? (
-              <div className="menu-options">
-                <li
-                  onClick={() => navigate(`/photographers/${params.uid}/edit`)}
-                >
-                  <FiEdit2 />
-                  <p>Edit Profile</p>
-                </li>
-                <li onClick={() => navigate(`/login`)}>
-                  <BsDoorOpen />
-                  <p>Log Out</p>
-                </li>
+              <div>
+                <div className="menu-options">
+                  <li
+                    onClick={() =>
+                      navigate(`/photographers/${params.uid}/edit`)
+                    }
+                  >
+                    <FiEdit2 />
+                    <p>Edit Profile</p>
+                  </li>
+                </div>
+                <div className="menu-options">
+                  <li
+                    className="logout-btn-profile"
+                    onClick={() => navigate(`/login`)}
+                  >
+                    <BsDoorOpen />
+                    <p>Log Out</p>
+                  </li>
+                </div>
               </div>
             ) : (
               ""
@@ -120,14 +129,14 @@ const UserProfile = () => {
               <h2>About Me</h2>
               <p>{user.bio}</p>
             </div>
-            <div className="photos-section"> 
+            <div className="photos-section">
               <h2>Recent Photos</h2>
-              {recentphotos &&  
+              {recentphotos &&
                 recentphotos.map((photo, index) => (
                   <div key={index}>
                     <img src={`/gallery/${photo}`} key={photo._id} alt="" />
                   </div>
-                ))} 
+                ))}
             </div>
 
             {savedUser ? (

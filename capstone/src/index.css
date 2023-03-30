@@ -667,6 +667,11 @@ code {
   max-height: fit-content;
 }
 
+.logout-btn-profile {
+  margin-bottom: -20px;
+  margin-top: -30px;
+}
+
 @media screen and (max-width: 500px) {
   .profile-pic {
     max-width: 300px;
