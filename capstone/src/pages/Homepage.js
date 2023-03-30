@@ -160,9 +160,22 @@ export const Homepage = () => {
           {user ? (
             <>
               <div className="featured-locations-card">
-                <h2 className="featured-title">Welcome @{user.username}</h2>
+                <h2 className="featured-title">Welcome @{user.username}!</h2>
                 <br />
-                <p>You are already a registered photographer</p> 
+                <p>
+                  Thanks for signing up with Memories Booking! We are thrilled
+                  to have you as part of our community, and we look forward to
+                  working with you to capture and preserve your most precious
+                  memories.
+                </p>
+                <br />
+                <p>
+                  Our team of talented photographers is dedicated to delivering
+                  the highest quality service, and we are confident that you
+                  will be thrilled with the results. Whether you're planning a
+                  wedding, a family photo shoot, or any other special occasion,
+                  we are here to help make your vision a reality.
+                </p>
                 <br />
               </div>
             </>
