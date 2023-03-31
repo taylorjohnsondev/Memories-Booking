@@ -33,10 +33,10 @@ const Gallery = () => {
             </div>
           </div>
           <div className="gallery-section">
-            <div className="row">
+            <div className="gallery-photo-container">
               {photos &&
                 photos.map((photo, index) => (
-                  <div className="col-lg-4 mb-4 mb-lg-0" key={index}>
+                  <div className="gallery-photo-item" key={index}>
                     <img src={photo} alt="" />
                   </div>
                 ))}
