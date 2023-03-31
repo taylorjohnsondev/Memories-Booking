@@ -40,7 +40,7 @@ const UserProfile = () => {
           <p className="username-profile">
             <strong>{user.fullname}</strong>
             <br />
-            <strong>{"@" + user.username}</strong>
+            <p>{"@" + user.username}</p>
           </p>
         </div>
         <div className="user-info-card">
@@ -131,12 +131,14 @@ const UserProfile = () => {
             </div>
             <div className="photos-section">
               <h2>Recent Photos</h2>
-              {recentphotos &&
-                recentphotos.map((photo, index) => (
-                  <div key={index}>
-                    <img src={`/gallery/${photo}`} key={photo._id} alt="" />
-                  </div>
-                ))}
+              <div className="recent-photos-container">
+                {recentphotos &&
+                  recentphotos.map((photo, index) => (
+                    <div className="recent-photos-items" key={index}>
+                      <img src={`/gallery/${photo}`} key={photo._id} alt="" />
+                    </div>
+                  ))}
+              </div>
             </div>
 
             {savedUser ? (
