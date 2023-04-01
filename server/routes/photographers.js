@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
     console.log(err);
     res.status(404);
   }
-}); 
+});
 
 router.get("/:uid", async (req, res) => {
   try {
@@ -31,7 +31,7 @@ router.get("/:uid", async (req, res) => {
 });
 
 router.put("/:uid/edit", requireAuth, async (req, res) => {
-  const { bio, password, fullname } = req.body;
+  const { bio, password, fullname, location } = req.body;
 
   const encryptedpass = await bcrypt.hash(password, 12);
 
@@ -48,7 +48,7 @@ router.put("/:uid/edit", requireAuth, async (req, res) => {
   try {
     const updatePhotographer = await User.updateOne(
       { _id: req.params.uid },
-      { $set: { password: encryptedpass, bio, fullname } }
+      { $set: { password: encryptedpass, bio, fullname, location } }
     );
 
     res.json(JSON.stringify(updatePhotographer));

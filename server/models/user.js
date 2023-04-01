@@ -66,13 +66,14 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   profile_image: { type: String, default: "/default.jpg" },
+  location: { type: String, default: "No location set" },
   bio: {
     type: String,
     default: "No bio yet",
   },
   photos: [
     {
-      type: String, 
+      type: String,
     },
   ],
   bookings: [bookingSchema],

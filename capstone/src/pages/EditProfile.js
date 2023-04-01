@@ -9,6 +9,7 @@ function EditProfile() {
   const [user, setUser] = useState([]);
   const savedUser = JSON.parse(localStorage.getItem("user"));
   const [fullname, setFullName] = useState("");
+  const [location, setLocation] = useState("");
   const [password, setPassword] = useState("");
   const [bio, setBio] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
@@ -45,6 +46,7 @@ function EditProfile() {
           password,
           bio,
           fullname,
+          location,
         }
       );
       console.log(res.data);
@@ -100,6 +102,15 @@ function EditProfile() {
                 id="fullname"
                 value={fullname}
                 onChange={(e) => setFullName(e.target.value)}
+                autoComplete="off"
+              />
+              <h3>Edit Location</h3>
+              <input
+                type="text"
+                placeholder={user.location}
+                id="location"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
                 autoComplete="off"
               />
               <div id="errorMsg">{errorMsg ? errorMsg : ""}</div>

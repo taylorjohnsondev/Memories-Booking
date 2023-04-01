@@ -16,12 +16,12 @@ import { Navigate } from "react-router-dom";
 import EditProfile from "./pages/EditProfile";
 import MyBookings from "./pages/MyBookings";
 import useAuth from "./hooks/useAuth";
-
+import PhotographersbyLocation from "./pages/PhotographersbyLocation";
 function App() {
   const { isAuth } = useAuth();
   const user = JSON.parse(localStorage.getItem("user"));
 
-  return ( 
+  return (
     <>
       {isAuth && user ? (
         //Logged in Routes
@@ -33,6 +33,12 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/photographers" element={<Photographers />} />
             <Route exact path="/photographers/:uid" element={<UserProfile />} />
+            <Route
+              exact
+              path="/location/:location"
+              element={<PhotographersbyLocation />}
+            />
+
             <Route
               exact
               path="/photographers/:uid/edit"
@@ -57,12 +63,18 @@ function App() {
             <Route exact path="/register" element={<Signup />} />
             <Route exact path="/photographers" element={<Photographers />} />
             <Route exact path="/photographers/:uid" element={<UserProfile />} />
+            <Route
+              exact
+              path="/location/:location"
+              element={<PhotographersbyLocation />}
+            />
             <Route exact path="/about" element={<About />} />
             <Route exact path="/book/:uid" element={<Booking />} />
             <Route exact path="/gallery/:uid" element={<Gallery />} />
             <Route exact path="/review/:uid" element={<Review />} />
-            <Route path="/404" element={<ErrorPage />} />
-            <Route path="*" element={<Navigate to="/404" />} />
+
+            {/* <Route path="/404" element={<ErrorPage />} />
+            <Route path="*" element={<Navigate to="/404" />} /> */}
           </Routes>
         </>
       )}

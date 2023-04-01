@@ -127,7 +127,10 @@ const UserProfile = () => {
           <section>
             <div className="about-section">
               <h2>About Me</h2>
+              <h3>Bio</h3>
               <p>{user.bio}</p>
+              <h3>Location</h3>
+              <p>{user.location}</p>
             </div>
             <div className="photos-section">
               <h2>Recent Photos</h2>

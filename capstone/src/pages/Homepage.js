@@ -111,7 +111,7 @@ export const Homepage = () => {
                   <p>Chicago, Illinois</p>
                   <Link
                     className="featured-btn"
-                    to="/photographers/641433aac25660221b5db329"
+                    to="/photographers/64271be43e698e7a3ad671d4"
                   >
                     View
                   </Link>
@@ -129,7 +129,7 @@ export const Homepage = () => {
                   <p>Miami, Florida</p>
                   <Link
                     className="featured-btn"
-                    to="/photographers/641433d6c25660221b5db391"
+                    to="/photographers/6427be447735d14cd5e21c28"
                   >
                     View
                   </Link>
@@ -147,7 +147,7 @@ export const Homepage = () => {
                   <p>NYC, New York</p>
                   <Link
                     className="featured-btn"
-                    to="/photographers/641433fbc25660221b5db3c8"
+                    to="/photographers/6427abde2b307984f88356e3"
                   >
                     View
                   </Link>
