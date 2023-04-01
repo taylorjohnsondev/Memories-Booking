@@ -12,7 +12,7 @@ const Photographers = () => {
     async function fetchPhotographers() {
       const response = await axios.get("http://localhost:3001/photographers");
       setUsers(response.data);
-      setLoading(false)
+      setLoading(false);
     }
     fetchPhotographers();
   });
@@ -60,14 +60,19 @@ const Photographers = () => {
             alt="Hollywood Sign on The Hill"
           />
           <div className="card-body">
-            <h5 className="card-title">Miami</h5>
+            <h5 className="card-title">Florida</h5>
             <p className="card-text">
-              Capture the magic of Miami's colorful art deco buildings and
+              Capture the magic of Florida's colorful art deco buildings and
               pristine beaches.
             </p>
             <p className="card-text">
               <small className="text-muted">
-                <button className="featured-btn">Search Photographers</button>
+                <button
+                  onClick={() => navigate(`/location/Florida`)}
+                  className="featured-btn"
+                >
+                  Search Photographers
+                </button>
               </small>
             </p>
           </div>
@@ -83,7 +88,12 @@ const Photographers = () => {
             </p>
             <p className="card-text">
               <small className="text-muted">
-                <button className="featured-btn">Search Photographers</button>
+                <button
+                  onClick={() => navigate(`/location/Los%20Angeles`)}
+                  className="featured-btn"
+                >
+                  Search Photographers
+                </button>
               </small>
             </p>
           </div>
@@ -103,7 +113,12 @@ const Photographers = () => {
             </p>
             <p className="card-text">
               <small className="text-muted">
-                <button className="featured-btn">Search Photographers</button>
+                <button
+                  onClick={() => navigate(`/location/New%20York`)}
+                  className="featured-btn"
+                >
+                  Search Photographers
+                </button>
               </small>
             </p>
           </div>
@@ -122,7 +137,12 @@ const Photographers = () => {
             </p>
             <p className="card-text">
               <small className="text-muted">
-                <button className="featured-btn">Search Photographers</button>
+                <button
+                  onClick={() => navigate(`/location/Illinois`)}
+                  className="featured-btn"
+                >
+                  Search Photographers
+                </button>
               </small>
             </p>
           </div>
@@ -142,7 +162,12 @@ const Photographers = () => {
             </p>
             <p className="card-text">
               <small className="text-muted">
-                <button className="featured-btn">Search Photographers</button>
+                <button
+                  onClick={() => navigate(`/location/Texas`)}
+                  className="featured-btn"
+                >
+                  Search Photographers
+                </button>
               </small>
             </p>
           </div>
