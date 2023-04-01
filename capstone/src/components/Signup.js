@@ -1,8 +1,12 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { AiOutlineUserAdd } from "react-icons/ai";
+
+const notify = () => toast("You have successfully created an account!");
 
 function Signup() {
   const navigate = useNavigate();
@@ -24,6 +28,7 @@ function Signup() {
         fullname,
       });
       localStorage.setItem("user", JSON.stringify(response.data));
+      toast.success("You have successfully created an account!");
       navigate("/");
       navigate(0);
       console.log(response);
@@ -35,7 +40,7 @@ function Signup() {
       } else if (error.response?.status === 400) {
         setErrorMsg("Password must be atleast 7 characters");
       } else {
-        setErrorMsg("Register failed");
+        toast.error("Sign up failed");
       }
     }
   };
@@ -57,6 +62,7 @@ function Signup() {
 
   return (
     <div>
+      <ToastContainer autoClose={3000} />
       <div className="register-form">
         <img
           className="memories-logo"

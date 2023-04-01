@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Loading from "../components/LoadingBar/Loading";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Booking = () => {
   let params = useParams();
 
@@ -17,6 +20,10 @@ const Booking = () => {
   const [location, setLocation] = useState("");
   const [comments, setComments] = useState("");
   const [loading, setLoading] = useState(true);
+
+  const notify = () => {
+    toast(`You have successfully booked with ${user.username}!`);
+  };
 
   useEffect(() => {
     async function fetchPhotographers() {
@@ -46,21 +53,21 @@ const Booking = () => {
         time,
         comments,
       });
-      setOkMsg(
-        `Booking of ${
-          user.fullname ? user.fullname : "@" + user.username
-        } successfull`
-      );
+      // setOkMsg(
+      //   `Booking of ${
+      //     user.fullname ? user.fullname : "@" + user.username
+      //   } successfull`
+      // );
+      toast.success(`You have successfully booked with @${user.username}!`);
     } catch (error) {
-      setErrorMsg("Error booking");
+      // setErrorMsg("Error booking");
+      toast.error("Booking appointment failed");
     }
   };
 
   return (
     <div>
-      <h1>
-        You are booking {user.fullname ? user.fullname : "@" + user.username}
-      </h1>
+      <ToastContainer />
       <form className="booking-form" onSubmit={handleSubmit}>
         <div className="booking-card">
           <input
