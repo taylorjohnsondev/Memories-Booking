@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
 import Loading from "../components/LoadingBar/Loading";
-
+import { useNavigate } from "react-router-dom";
 const colors = {
   orange: "#FFBA5A",
   grey: "#a9a9a9",
@@ -12,7 +12,7 @@ const colors = {
 
 const Review = () => {
   let params = useParams();
-
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [stars, setStars] = useState(0);
@@ -73,6 +73,12 @@ const Review = () => {
       {savedUser && savedUser.uid === params.uid ? (
         <>
           <div>
+            <button
+              className="featured-btn"
+              onClick={() => navigate(`/photographers/${params.uid}`)}
+            >
+              Back to profile
+            </button>
             <div>
               <p className="user-review-title">
                 {user.fullname ? user.fullname : "@" + user.username}'s reviews!
@@ -95,6 +101,12 @@ const Review = () => {
         </>
       ) : (
         <div>
+          <button
+            className="featured-btn"
+            onClick={() => navigate(`/photographers/${params.uid}`)}
+          >
+            Back to profile
+          </button>
           <div className="create-review-card">
             <div className="review-form">
               <form onSubmit={handleSubmit}>

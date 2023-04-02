@@ -822,7 +822,7 @@ code {
 }
 
 .form-container {
-  margin-top: 5vh
+  margin-top: 5vh;
 }
 
 .pfp-username-card {
@@ -1070,7 +1070,6 @@ code {
 .reviews p {
   color: #38484d;
   margin-top: 20px;
-
 }
 
 .reviews h5 {
@@ -1099,10 +1098,10 @@ code {
 .review-form input[type="text"],
 select {
   width: 80%;
-	padding: 10px;
-	border-radius: 5px;
-	border: none;
-	margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 20px;
   margin-left: 50px;
   margin-top: 20px;
   background-color: #eeeeee;
@@ -1110,14 +1109,14 @@ select {
 
 .review-form button[type="submit"] {
   background-color: #38484d;
-	color: white;
-	padding: 12px 20px;
-	border: none;
-	border-radius: 10px;
-	cursor: pointer;
-	font-size: 16px;
-	margin-top: 20px;
-	width: 50%;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  width: 50%;
   margin-left: 120px;
   margin-bottom: 20px;
 }
@@ -1166,7 +1165,7 @@ select {
   }
   .review-form input[type="text"],
   select {
-  margin-left: 20px;
+    margin-left: 20px;
   }
   .stars-container {
     margin-left: 10px;
@@ -1187,6 +1186,15 @@ select {
   margin-top: 50px;
   border-radius: 10px;
   padding: 50px;
+}
+
+.recent-section {
+  background-color: #fff;
+  max-width: 1000px;
+  border-radius: 10px;
+  margin-left: 600px;
+  margin-top: 5%;
+  text-align: center;
 }
 
 .gallery-section h2 {

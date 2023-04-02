@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const requireAuth = require("../middleware/requireAuth");
+const { ObjectId } = require("mongodb");
 
 router.get("/", async (req, res) => {
   try {
@@ -28,6 +29,11 @@ router.get("/:uid", async (req, res) => {
     console.log(err);
     res.status(404);
   }
+});
+
+router.get("/:location", async (req, res) => {
+  const users = await User.find({ location: req.params.location });
+  res.json(users);
 });
 
 router.put("/:uid/edit", requireAuth, async (req, res) => {
@@ -57,4 +63,16 @@ router.put("/:uid/edit", requireAuth, async (req, res) => {
   }
 });
 
-module.exports = router;
+router.delete("/:uid", requireAuth, async (req, res) => {
+  const uid = req.params.uid;
+
+  try {
+    const result = await User.deleteOne({ _id: new ObjectId(uid) });
+    console.log(result);
+    res.sendStatus(200);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error deleting user");
+  }
+});
+module.exports = router; 

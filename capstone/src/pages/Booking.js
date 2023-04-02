@@ -53,14 +53,8 @@ const Booking = () => {
         time,
         comments,
       });
-      // setOkMsg(
-      //   `Booking of ${
-      //     user.fullname ? user.fullname : "@" + user.username
-      //   } successfull`
-      // );
       toast.success(`You have successfully booked with @${user.username}!`);
     } catch (error) {
-      // setErrorMsg("Error booking");
       toast.error("Booking appointment failed");
     }
   };
@@ -77,6 +71,7 @@ const Booking = () => {
             name="Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            required
           ></input>
           <br />
           <input
@@ -86,6 +81,7 @@ const Booking = () => {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           ></input>
           <br />
           <input
@@ -95,6 +91,7 @@ const Booking = () => {
             placeholder="Phone Number"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
+            required
           ></input>
           <br />
           <input
@@ -104,6 +101,7 @@ const Booking = () => {
             placeholder="Date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
+            required
           ></input>
           <br />
           <input
@@ -113,6 +111,7 @@ const Booking = () => {
             placeholder="Location"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
+            required
           ></input>
           <br />
           <input
@@ -122,6 +121,7 @@ const Booking = () => {
             placeholder="Time"
             value={time}
             onChange={(e) => setTime(e.target.value)}
+            required  
           ></input>
           <br />
           <input

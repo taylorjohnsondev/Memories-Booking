@@ -8,9 +8,11 @@ const storage = multer.diskStorage({
   },
 });
 
+const maxSize = 5 * 1024 * 1024;
+
 const galleryupload = multer({
   storage: storage,
-  limit: { filesize: 1000000 },
+  limit: { filesize: maxSize },
 });
 
 module.exports = galleryupload;

@@ -132,17 +132,18 @@ const UserProfile = () => {
               <h3>Location</h3>
               <p>{user.location}</p>
             </div>
-            <div className="photos-section">
+              <div className="recent-section"> 
               <h2>Recent Photos</h2>
-              <div className="recent-photos-container">
-                {recentphotos &&
-                  recentphotos.map((photo, index) => (
-                    <div className="recent-photos-items" key={index}>
-                      <img src={`/gallery/${photo}`} key={photo._id} alt="" />
-                    </div>
-                  ))}
+
+                <div className="gallery-photo-container">
+                  {recentphotos &&
+                    recentphotos.map((photo, index) => (
+                      <div className="gallery-photo-item" key={index}>
+                        <img src={`/gallery/${photo}`} alt="" />
+                      </div>
+                    ))}
+                </div>
               </div>
-            </div>
 
             {savedUser ? (
               ""

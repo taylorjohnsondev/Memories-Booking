@@ -48,7 +48,7 @@ const PhotographersbyLocation = () => {
 
               <button
                 className="featured-btn"
-                onClick={() => navigate(`${user._id}`)}
+                onClick={() => navigate(`/photographers/${user._id}`)}
               >
                 View Profile
               </button>
