@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import AvatarUpload from "../components/AvatarUploader";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function EditProfile() {
   let params = useParams();
   const navigate = useNavigate();
@@ -15,6 +18,8 @@ function EditProfile() {
   const [errorMsg, setErrorMsg] = useState("");
   const [okMsg, setOkMsg] = useState("");
   const token = savedUser.token;
+
+  const notify = () => toast("You have successfully updated your profile!");
 
   useEffect(() => {
     async function fetchUser() {
@@ -50,7 +55,7 @@ function EditProfile() {
         }
       );
       console.log(res.data);
-      setOkMsg("Update Success");
+      toast.success("You have successfully updated your profile!");
     } catch (error) {
       if (error.response?.status === 422) {
         setErrorMsg("Please enter a new password");
@@ -59,11 +64,13 @@ function EditProfile() {
       } else {
         setErrorMsg("Update failed");
       }
+      toast.error("Profile update failed");
     }
   };
 
   return (
     <div>
+      <ToastContainer />
       {savedUser && savedUser.uid === params.uid ? (
         <>
           <div className="pfp-username-card">

@@ -1,6 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const notify = () => toast("An error has occured.");
 
 function Login() {
   const navigate = useNavigate();
@@ -23,11 +27,11 @@ function Login() {
       navigate(0);
     } catch (error) {
       if (error.response?.status === 422) {
-        setErrorMsg("All fields not filled");
+        toast.error("All fields not filled");
       } else if (error.response?.status === 401) {
-        setErrorMsg("Username or Password incorrect");
+        toast.error("Username or Password incorrect");
       } else {
-        setErrorMsg("Login failed");
+        toast.error("Login failed");
       }
     }
   };
@@ -54,6 +58,7 @@ function Login() {
 
   return (
     <div>
+      <ToastContainer autoClose={3000} />
       <div className="login-form">
         <img
           className="memories-logo"
