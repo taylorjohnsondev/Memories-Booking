@@ -1229,3 +1229,12 @@ select {
   margin-bottom: 20px;
   font-weight: 400;
 }
+
+/* About Us */
+
+.howtoimage {
+  object-fit: cover;
+  min-height: 150px;
+  max-height: 200px;
+  max-width: 200px;
+}

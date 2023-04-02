@@ -82,6 +82,84 @@ export const About = () => {
       <br />
       <br />
 
+
+      <div className="col-md-10 col-xl-8 text-center mx-auto">
+  <h1 className="mb-4">How it works</h1>
+</div>
+
+<div className="row row-cols-1 row-cols-md-3 g-4">
+  <div className="col">
+    <div className="card h-100">
+      <div className="row g-0">
+        <div className="col-md-4">
+          <img src="how1.jpg" className="card-img-top howtoimage" alt="r1" style={{minHeight: '150px', maxHeight: '300px'}}/>
+        </div>
+        <div className="col-md-8">
+          <div className="card-body">
+            <h5 className="card-title">Book a Photographer</h5>
+            <p className="card-text">Easily find and book your ideal photographer through our online platform. Browse by location, 
+            portfolio, and style to discover a wide selection of talented photographers, and let them take care of your next photoshoot. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div className="col">
+    <div className="card h-100">
+      <div className="row g-0">
+        <div className="col-md-4">
+          <img src="how2.jpg" className="card-img-top howtoimage" alt="r1" style={{minHeight: '150px', maxHeight: '300px'}}/>
+        </div>
+        <div className="col-md-8">
+          <div className="card-body">
+            <h5 className="card-title">Have Fun on Your Photoshoot</h5>
+            <p className="card-text">Communicate directly with your chosen photographer, receive helpful tips and reminders, 
+            and show up on the day of your shoot for a personalized, enjoyable experience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div className="col">
+    <div className="card h-100">
+      <div className="row g-0">
+        <div className="col-md-4">
+          <img src="how3.jpg" className="card-img-top howtoimage" alt="r1" style={{minHeight: '150px', maxHeight: '300px'}}/>
+        </div>
+        <div className="col-md-8">
+          <div className="card-body">
+            <h5 className="card-title">Share and Review</h5>
+            <p className="card-text">Once your photos are ready, we'll send you a secure link where you can easily view and download your images.
+             And don't forget to leave a review of your photographer to help future clients find their perfect match!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <br />
+      <br />
+      <br />
+
+      <div className="col-md-10 col-xl-8 text-center mx-auto">
+      
+      <Link
+                    className="btn btn-primary btn-lg custom-button"
+                    type="button"
+                    to="/photographers"
+                  >
+                    Find Photographer
+                  </Link>
+
+      </div>
+
+      <br />
+      <br />
+      <br />
+
       <div class="col-md-10 col-xl-8 text-center mx-auto">
         <h1 class="mb-4">Testimonials</h1>
         <p
