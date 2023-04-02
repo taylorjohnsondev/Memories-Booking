@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { AiOutlineUserAdd } from "react-icons/ai";
 
-const notify = () => toast("You have successfully created an account!");
+const notify = () => toast("An error has occured.");
 
 function Signup() {
   const navigate = useNavigate();
@@ -28,17 +28,16 @@ function Signup() {
         fullname,
       });
       localStorage.setItem("user", JSON.stringify(response.data));
-      toast.success("You have successfully created an account!");
       navigate("/");
       navigate(0);
       console.log(response);
     } catch (error) {
       if (error.response?.status === 422) {
-        setErrorMsg("All fields not filled");
+        toast.error("All fields not filled");
       } else if (error.response?.status === 423) {
-        setErrorMsg("Someone is already using that username");
+        toast.error("Someone is already using that username");
       } else if (error.response?.status === 400) {
-        setErrorMsg("Password must be atleast 7 characters");
+        toast.error("Password must be atleast 7 characters");
       } else {
         toast.error("Sign up failed");
       }

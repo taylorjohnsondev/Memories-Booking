@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const notify = () => toast("You have successfully logged in!");
+const notify = () => toast("An error has occured.");
 
 function Login() {
   const navigate = useNavigate();
@@ -23,14 +23,13 @@ function Login() {
       });
 
       localStorage.setItem("user", JSON.stringify(response.data));
-      toast.success("You have successfully logged in!");
       navigate("/");
       navigate(0);
     } catch (error) {
       if (error.response?.status === 422) {
-        setErrorMsg("All fields not filled");
+        toast.error("All fields not filled");
       } else if (error.response?.status === 401) {
-        setErrorMsg("Username or Password incorrect");
+        toast.error("Username or Password incorrect");
       } else {
         toast.error("Login failed");
       }
@@ -40,7 +39,6 @@ function Login() {
     localStorage.clear();
     navigate("/");
     navigate(0);
-    toast.success("you have successfully logged out");
   }
 
   if (user) {
