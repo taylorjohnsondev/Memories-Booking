@@ -773,6 +773,12 @@ code {
   border-top-right-radius: 10px !important;
 }
 
+@media screen and (max-width: 500px) {
+  #user {
+    margin-left: 50px;
+  }
+}
+
 /* EDIT PROFILE */
 
 .AvatarUploader {
@@ -928,6 +934,8 @@ code {
   .edit-form {
     max-width: 300px;
     margin-left: 45px;
+    margin-top: -10px;
+    padding-top: 80px;
   }
 
   .pfp-username-card {
@@ -951,7 +959,7 @@ code {
 
   .pfp-username-card p {
     margin-left: 30%;
-    margin-top: -170px;
+    margin-top: -210px;
   }
 
   .edit-form input {
@@ -968,7 +976,9 @@ code {
     max-width: 150px;
     padding: 12px;
     margin-left: 50px;
+    margin-top: 50px;
   }
+
   .AvatarUploader input {
     max-width: 100px;
     margin-top: 10px;
@@ -1128,7 +1138,8 @@ select {
 .review-form h1 {
   color: #38484d;
   font-size: xx-large;
-  margin-left: 155px;
+  display: flex;
+  justify-content: center;
 }
 
 .stars-container {
@@ -1154,6 +1165,19 @@ select {
   margin-top: 50px;
   margin-left: 40%;
   color: #38484d;
+}
+
+.previous-page {
+  border: none;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.previous-page:hover {
+  background-color: #e2e2e2;
 }
 
 @media screen and (max-width: 500px) {
@@ -1236,6 +1260,44 @@ select {
   text-align: center;
   margin-bottom: 20px;
   font-weight: 400;
+}
+
+.bookings-title {
+  font-size: larger;
+  font-weight: bold;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  margin-top: 50px;
+  color: #38484d;
+  width: 400px;
+  margin-left: 40%;
+}
+
+@media screen and (max-width: 500px) {
+  .bookings-title {
+    width: 300px;
+    margin-left: 40px;
+    text-align: center;
+  }
+  .gallery-title-upload {
+    width: 200px;
+    margin-left: 25px;
+  }
+  .gallery-upload-card {
+    width: 300px;
+    margin-left: 45px;
+  }
+  .gallery-section {
+    margin-left: 40px;
+    width: 300px;
+    margin-bottom: 50px;
+  }
+  .gallery-photo-item img {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+  }
 }
 
 /* About Us */

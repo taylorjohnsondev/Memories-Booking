@@ -27,12 +27,12 @@ const Gallery = () => {
     <>
       {savedUser && savedUser.uid === params.uid ? (
         <>
-           <button
-            className="featured-btn"
+          <button
+            className="previous-page"
             onClick={() => navigate(`/photographers/${params.uid}`)}
           >
             Back to profile
-          </button> 
+          </button>
           <div className="gallery-upload-card">
             <div className="gallery-title-upload">
               <h2>Hello @{user.username}!</h2>
@@ -54,14 +54,14 @@ const Gallery = () => {
       ) : (
         <>
           <button
-            className="featured-btn"
+            className="previous-page"
             onClick={() => navigate(`/photographers/${params.uid}`)}
           >
             Back to profile
           </button>
           <div className="gallery-section">
             <h2>@{user.username}'s Gallery</h2>
-            <div className="gallery-photo-container"> 
+            <div className="gallery-photo-container">
               {photos &&
                 photos.map((photo, index) => (
                   <div className="gallery-photo-item" key={index}>

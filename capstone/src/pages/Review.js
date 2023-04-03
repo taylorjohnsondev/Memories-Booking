@@ -74,7 +74,7 @@ const Review = () => {
         <>
           <div>
             <button
-              className="featured-btn"
+              className="previous-page"
               onClick={() => navigate(`/photographers/${params.uid}`)}
             >
               Back to profile
@@ -102,7 +102,7 @@ const Review = () => {
       ) : (
         <div>
           <button
-            className="featured-btn"
+            className="previous-page"
             onClick={() => navigate(`/photographers/${params.uid}`)}
           >
             Back to profile

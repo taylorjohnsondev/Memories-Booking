@@ -56,7 +56,7 @@ const MyBookings = () => {
         <>
           <div>
             <div>
-              <p className="user-review-title">
+              <p className="bookings-title">
                 {user.fullname ? user.fullname : "@" + user.username}, here you
                 can view your current bookings.
               </p>
