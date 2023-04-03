@@ -27,11 +27,13 @@ const PhotographersbyLocation = () => {
 
   return (
     <div>
-      <h1>
-        {users.length >= 1
-          ? `Here are the photographers from ${params.location}`
-          : `No photographers from ${params.location} found.`}
-      </h1>
+      <div className="location-title">
+        <h1>
+          {users.length >= 1
+            ? `Photographers from ${params.location}`
+            : `No photographers from ${params.location} found.`}
+        </h1>
+      </div>
       <div id="user-container">
         {users &&
           users.map((user) => (

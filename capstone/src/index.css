@@ -1274,6 +1274,23 @@ select {
   margin-left: 40%;
 }
 
+.location-title h1 {
+  font-size: xx-large;
+}
+
+.location-title {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-left: 40%;
+}
+
+
 @media screen and (max-width: 500px) {
   .bookings-title {
     width: 300px;
@@ -1297,6 +1314,10 @@ select {
     display: flex;
     flex-direction: column;
     max-width: 200px;
+  }
+  .location-title {
+    margin-left: 40px;
+    width: 300px;
   }
 }
 
