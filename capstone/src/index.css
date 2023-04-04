@@ -841,6 +841,9 @@ code {
   margin-top: 50px;
 }
 
+#delete-profile {
+  background-color: red;
+}
 .pfp-username-card img {
   border-radius: 50%;
   max-width: 60%;

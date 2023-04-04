@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import AvatarUpload from "../components/AvatarUploader";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { TbTrash } from "react-icons/tb";
 
 function EditProfile() {
   let params = useParams();
@@ -68,6 +69,28 @@ function EditProfile() {
     }
   };
 
+  const handleDelete = async (event) => {
+    event.preventDefault();
+
+    try {
+      await axios.delete(
+        `http://localhost:3001/photographers/${savedUser.uid}`
+      );
+      toast.success("Account Deleted");
+      handleLogout();
+    } catch (error) {
+      if (error) {
+        toast.error("Error deleting profile");
+      }
+    }
+  };
+
+  function handleLogout() {
+    localStorage.clear();
+    navigate("/");
+    navigate(0);
+  }
+
   return (
     <div>
       <ToastContainer />
@@ -87,7 +110,7 @@ function EditProfile() {
               <h3>Change password</h3>
               <input
                 type="password"
-                placeholder="New Password"
+                placeholder="Must be atleast 7 characters"
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -100,7 +123,7 @@ function EditProfile() {
                 id="bio"
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
-                autoComplete="off"
+                autoComplete="on"
               />
               <h3>Edit Name</h3>
               <input
@@ -109,7 +132,7 @@ function EditProfile() {
                 id="fullname"
                 value={fullname}
                 onChange={(e) => setFullName(e.target.value)}
-                autoComplete="off"
+                autoComplete="on"
               />
               <h3>Edit Location</h3>
               <input
@@ -118,12 +141,17 @@ function EditProfile() {
                 id="location"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                autoComplete="off"
+                autoComplete="on"
               />
               <div id="errorMsg">{errorMsg ? errorMsg : ""}</div>
               <div id="okMsg">{okMsg ? okMsg : ""}</div>
               <button type="submit">Update Profile</button>
             </form>
+
+            <button id="delete-profile" onClick={handleDelete}>
+              <TbTrash />
+              Delete Account
+            </button>
 
             <div />
           </div>
