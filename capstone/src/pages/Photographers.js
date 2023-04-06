@@ -10,12 +10,12 @@ const Photographers = () => {
 
   useEffect(() => {
     async function fetchPhotographers() {
-      const response = await axios.get("photographers");
+      const response = await axios.get(`photographers`);
       setUsers(response.data);
       setLoading(false);
     }
     fetchPhotographers();
-  });
+  }, []);
 
   if (loading) {
     return <Loading />;

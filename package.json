@@ -8,8 +8,8 @@
     "client": "npm start --workspace=capstone",
     "start": "concurrently --kill-others-on-fail \"npm run server\"  \"npm run client\"",
     "build-client": "npm run build --workspace=capstone",
-    "build-server": "npm run build --workspace=server",  
-    "build": "concurrently --kill-others-on-fail  \"npm run build-client\"  \"npm run build-server\"" 
+    "build-server": "npm run build --workspace=server",
+    "build": "concurrently --kill-others-on-fail  \"npm run build-client\"  \"npm run build-server\""
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,6 @@
   "bugs": {
     "url": "https://github.com/taylorjohnsondev/mern-capstone/issues"
   },
-  "homepage": "https://github.com/taylorjohnsondev/mern-capstone#readme",
   "workspaces": [
     "server",
     "capstone"
