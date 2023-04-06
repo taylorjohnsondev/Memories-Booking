@@ -1,3 +1,5 @@
-const port = process.env.PORT || 3001 
+const { PORT } = require("../constants")
 
-module.exports = port
+const port = PORT || 3001 
+
+module.exports = port 

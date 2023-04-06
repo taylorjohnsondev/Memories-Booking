@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const User = require("../models/user");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
+const { JWT_SECRET } = require("../constants");
 
 router.route("/").get((req, res, next) => {
   res.send("login & register endpoint");
@@ -41,7 +42,7 @@ router.post("/register", async (req, res) => {
             username: user.username,
             id: user._id,
           },
-          process.env.JWT_SECRET
+          JWT_SECRET 
         );
 
         user
@@ -81,7 +82,7 @@ router.post("/login", async (req, res) => {
       username: user.username,
       id: user._id,
     },
-    process.env.JWT_SECRET 
+    JWT_SECRET 
   );
 
   res.status(200);
