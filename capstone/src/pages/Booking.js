@@ -28,7 +28,7 @@ const Booking = () => {
   useEffect(() => {
     async function fetchPhotographers() {
       const response = await axios.get(
-        `http://localhost:3001/photographers/${params.uid}`
+        `photographers/${params.uid}`
       );
       setUser(response.data);
       setLoading(false);
@@ -44,7 +44,7 @@ const Booking = () => {
     event.preventDefault();
 
     try {
-      await axios.post(`http://localhost:3001/book/${params.uid}`, {
+      await axios.post(`book/${params.uid}`, {
         name,
         email,
         phone,

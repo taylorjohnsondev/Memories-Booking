@@ -2,14 +2,15 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const cors = require("cors");
+const port = require("./config/server.config");
 const dotenv = require("dotenv").config();
+const routes = require("./routes/index");
+const path = require("path");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
 app.use;
-
-const PORT = 3001;
 
 app.use("/", require("./routes/index"));
 
@@ -26,8 +27,16 @@ async function connectDB() {
 
 connectDB();
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`); 
+app.use("/", routes);
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/build")));
+  app.all("*", (req, res, next) => {
+    res.sendFile(path.resolve(__dirname, "../client/build/index.html"));
+  });
+}
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
 
 module.exports = app;

@@ -17,7 +17,7 @@ function Login() {
     event.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3001/auth/login", {
+      const response = await axios.post("auth/login", {
         username,
         password,
       });
@@ -39,9 +39,9 @@ function Login() {
     localStorage.clear();
     navigate("/");
     navigate(0);
-  }
+  }  
 
-  if (user) {
+  if (user) { 
     return (
       <div className="logout-container">
         <div className="logout-card">
@@ -62,7 +62,7 @@ function Login() {
       <div className="login-form">
         <img
           className="memories-logo"
-          src="http://localhost:3000/memories1.png"
+          src={require("./memories1.png")}
           alt=""
         />
         <h1>Log in to your account!</h1>

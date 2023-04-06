@@ -27,14 +27,14 @@ function GalleryUpload() {
     const formData = new FormData();
     formData.append("newImage", file);
     axios
-      .post(`http://localhost:3001/gallery/${user.uid}`, formData)
+      .post(`gallery/${user.uid}`, formData)
       .then((response) => {
         console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
-  }; 
+  };
   return (
     <div className="AvatarUploader">
       <input type="file" name="newImage" onChange={currentFile} />
@@ -43,4 +43,4 @@ function GalleryUpload() {
   );
 }
 
-export default GalleryUpload; 
+export default GalleryUpload;

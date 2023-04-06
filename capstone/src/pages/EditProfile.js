@@ -25,7 +25,7 @@ function EditProfile() {
   useEffect(() => {
     async function fetchUser() {
       const response = await axios.get(
-        `http://localhost:3001/photographers/${params.uid}`
+        `photographers/${params.uid}`
       );
       setUser(response.data);
     }
@@ -47,7 +47,7 @@ function EditProfile() {
 
     try {
       const res = await axios.put(
-        `http://localhost:3001/photographers/${savedUser.uid}/edit`,
+        `photographers/${savedUser.uid}/edit`,
         {
           password,
           bio,
@@ -74,7 +74,7 @@ function EditProfile() {
 
     try {
       await axios.delete(
-        `http://localhost:3001/photographers/${savedUser.uid}`
+        `photographers/${savedUser.uid}`
       );
       toast.success("Account Deleted");
       handleLogout();

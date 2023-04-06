@@ -13,7 +13,7 @@ const PhotographersbyLocation = () => {
   useEffect(() => {
     async function fetchPhotographers() {
       const response = await axios.get(
-        `http://localhost:3001/location/${params.location}`
+        `location/${params.location}`
       );
       setUsers(response.data);
       setLoading(false);

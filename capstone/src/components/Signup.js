@@ -21,7 +21,7 @@ function Signup() {
     event.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3001/auth/register", {
+      const response = await axios.post("auth/register", {
         email,
         username,
         password,
@@ -65,7 +65,7 @@ function Signup() {
       <div className="register-form">
         <img
           className="memories-logo"
-          src="http://localhost:3000/memories1.png"
+          src={require("./memories1.png")}
           alt=""
         />
         <h1>Create a photographer account!</h1>

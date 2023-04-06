@@ -27,7 +27,7 @@ function AvatarUpload() {
     const formData = new FormData();
     formData.append("newImage", file);
     axios
-      .put(`http://localhost:3001/upload/${user.uid}`, formData)
+      .put(`upload/${user.uid}`, formData)
       .then((response) => {
         console.log(response.data);
       })

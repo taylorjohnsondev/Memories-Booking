@@ -16,7 +16,7 @@ const MyBookings = () => {
   useEffect(() => {
     async function fetchPhotographers() {
       const response = await axios.get(
-        `http://localhost:3001/photographers/${params.uid}`
+        `photographers/${params.uid}`
       );
       setUser(response.data);
       setBookings(response.data.bookings || []);
@@ -28,7 +28,7 @@ const MyBookings = () => {
   useEffect(() => {
     async function fetchBookings() {
       const response = await axios.get(
-        `http://localhost:3001/book/${params.uid}`
+        `book/${params.uid}`
       );
       setBookings(response.data.bookings || []);
       setLoading(false);
