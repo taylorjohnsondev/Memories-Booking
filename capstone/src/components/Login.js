@@ -4,13 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const notify = () => toast("An error has occured.");
 
 function Login() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMsg, setErrorMsg] = useState("");
   const user = JSON.parse(localStorage.getItem("user"));
 
   const handleSubmit = async (event) => {
@@ -85,8 +83,6 @@ function Login() {
 
           <button type="submit">Login</button>
         </form>
-        <div id="errorMsg">{errorMsg ? errorMsg : ""}</div>
-
         <div />
       </div>
       <div className="photo-bg">

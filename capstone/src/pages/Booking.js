@@ -9,8 +9,6 @@ const Booking = () => {
   let params = useParams();
 
   const [user, setUser] = useState([]);
-  const [errorMsg, setErrorMsg] = useState("");
-  const [okMsg, setOkMsg] = useState("");
   //Form Inputs
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -20,10 +18,6 @@ const Booking = () => {
   const [location, setLocation] = useState("");
   const [comments, setComments] = useState("");
   const [loading, setLoading] = useState(true);
-
-  const notify = () => {
-    toast(`You have successfully booked with ${user.username}!`);
-  };
 
   useEffect(() => {
     async function fetchPhotographers() {
@@ -134,8 +128,6 @@ const Booking = () => {
           ></input>
           <br />
           <button className="book-btn">Book</button>
-          <div id="errorMsg">{errorMsg ? errorMsg : ""}</div>
-          <div id="okMsg">{okMsg ? okMsg : ""}</div>
         </div>
         <div className="booking-photo">
           <img src={require("./booking.jpg")} alt="" />

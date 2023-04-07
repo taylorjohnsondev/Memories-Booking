@@ -17,10 +17,8 @@ function EditProfile() {
   const [password, setPassword] = useState("");
   const [bio, setBio] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
-  const [okMsg, setOkMsg] = useState("");
   const token = savedUser.token;
 
-  const notify = () => toast("You have successfully updated your profile!");
 
   useEffect(() => {
     async function fetchUser() {
@@ -144,7 +142,6 @@ function EditProfile() {
                 autoComplete="on"
               />
               <div id="errorMsg">{errorMsg ? errorMsg : ""}</div>
-              <div id="okMsg">{okMsg ? okMsg : ""}</div>
               <button type="submit">Update Profile</button>
             </form>
 

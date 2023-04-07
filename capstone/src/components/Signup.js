@@ -6,14 +6,12 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { AiOutlineUserAdd } from "react-icons/ai";
 
-const notify = () => toast("An error has occured.");
 
 function Signup() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMsg, setErrorMsg] = useState("");
   const [fullname, setFullName] = useState("");
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -107,7 +105,6 @@ function Signup() {
             <AiOutlineUserAdd /> Signup
           </button>
         </form>
-        <div id="errorMsg">{errorMsg ? errorMsg : ""}</div>
         <div />
       </div>
       <div className="photo-bg">
