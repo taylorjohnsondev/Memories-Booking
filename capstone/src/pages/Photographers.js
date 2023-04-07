@@ -10,7 +10,7 @@ const Photographers = () => {
 
   useEffect(() => {
     async function fetchPhotographers() {
-      const response = await axios.get(`photographers`);
+      const response = await axios.get(`api/photographers`);
       setUsers(response.data);
       setLoading(false);
     }

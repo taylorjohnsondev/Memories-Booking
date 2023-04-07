@@ -27,7 +27,7 @@ function GalleryUpload() {
     const formData = new FormData();
     formData.append("newImage", file);
     axios
-      .post(`gallery/${user.uid}`, formData)
+      .post(`api/gallery/${user.uid}`, formData) 
       .then((response) => {
         console.log(response.data);
       })

@@ -8,7 +8,7 @@ const reviewRouter = require("./reviews");
 const galleryRouter = require("./uploadgallery");
 const locationRouter = require("./photographerlocations");
 
-router.get("/", (req, res, next) => {
+router.get("/api", (req, res, next) => {
   res.status(200).send("api endpoint");
 });
 

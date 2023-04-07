@@ -13,7 +13,7 @@ const PhotographersbyLocation = () => {
   useEffect(() => {
     async function fetchPhotographers() {
       const response = await axios.get(
-        `location/${params.location}`
+        `api/location/${params.location}`
       );
       setUsers(response.data);
       setLoading(false);

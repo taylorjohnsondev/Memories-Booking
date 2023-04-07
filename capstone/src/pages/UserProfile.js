@@ -19,7 +19,7 @@ const UserProfile = () => {
   useEffect(() => {
     async function fetchPhotographers() {
       const response = await axios.get(
-        `photographers/${params.uid}`
+        `api/photographers/${params.uid}`
       );
       setUser(response.data);
       setPhotos(response.data.photos);

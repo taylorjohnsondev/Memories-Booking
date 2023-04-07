@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-
 const user = JSON.parse(localStorage.getItem("user"));
- 
+
 function AvatarUpload() {
   const [file, setFile] = useState();
   const token = user.token;
- 
+
   axios.interceptors.request.use(
     (config) => {
       config.headers.authorization = `Bearer ${token}`;
@@ -27,7 +26,7 @@ function AvatarUpload() {
     const formData = new FormData();
     formData.append("newImage", file);
     axios
-      .put(`upload/${user.uid}`, formData)
+      .put(`api/upload/${user.uid}`, formData)
       .then((response) => {
         console.log(response.data);
       })

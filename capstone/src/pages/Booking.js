@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import axios from "../axios/axiosConfig"
 import Loading from "../components/LoadingBar/Loading";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -22,7 +22,7 @@ const Booking = () => {
   useEffect(() => {
     async function fetchPhotographers() {
       const response = await axios.get(
-        `photographers/${params.uid}`
+        `api/photographers/${params.uid}`
       );
       setUser(response.data);
       setLoading(false);
@@ -38,7 +38,7 @@ const Booking = () => {
     event.preventDefault();
 
     try {
-      await axios.post(`book/${params.uid}`, {
+      await axios.post(`api/book/${params.uid}`, {
         name,
         email,
         phone,

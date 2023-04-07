@@ -15,7 +15,7 @@ const Gallery = () => {
   useEffect(() => {
     async function fetchUser() {
       const response = await axios.get(
-        `photographers/${params.uid}`
+        `api/photographers/${params.uid}`
       );
       setUser(response.data);
       setPhotos(response.data.photos);
