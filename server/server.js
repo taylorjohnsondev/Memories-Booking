@@ -5,7 +5,6 @@ const cors = require("cors");
 const port = require("./config/server.config");
 const dotenv = require("dotenv").config();
 const path = require("path");
-const { DB_USERNAME, DB_PASSWORD, NODE_ENV } = require("./constants");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -13,14 +12,14 @@ app.use(cors());
 app.use;
 
 app.use("/", require("./routes/index"));
-if (NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") { 
   app.use(express.static(path.join(__dirname, "../capstone/build")));
   app.all("*", (req, res, next) => {
     res.sendFile(path.resolve(__dirname, "../capstone/build/index.html"));
   });
 }
 
-const url = `mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@capstone-group-project.1yvi8j1.mongodb.net/?retryWrites=true&w=majority`;
+const url = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@capstone-group-project.1yvi8j1.mongodb.net/?retryWrites=true&w=majority`;
 
 async function connectDB() {
   try { 
