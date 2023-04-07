@@ -41,7 +41,7 @@ router.post("/register", async (req, res) => {
             username: user.username,
             id: user._id,
           },
-          JWT_SECRET
+          process.env.JWT_SECRET
         );
 
         user
@@ -81,7 +81,7 @@ router.post("/login", async (req, res) => {
       username: user.username,
       id: user._id,
     },
-    process.env.JWT_SECRET 
+    process.env.JWT_SECRET
   );
 
   res.status(200);
