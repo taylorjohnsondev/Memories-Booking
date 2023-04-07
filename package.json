@@ -9,7 +9,7 @@
     "start": "concurrently --kill-others-on-fail \"npm run server\"  \"npm run client\"",
     "build-client": "npm run build --workspace=capstone",
     "build-server": "npm run build --workspace=server",
-    "build": "concurrently --kill-others-on-fail \"npm run build-server\" \"npm run build-client\"" 
+    "build": "concurrently --kill-others-on-fail \"npm run build-client\" \"npm run build-server\""
   },
   "repository": {
     "type": "git",
