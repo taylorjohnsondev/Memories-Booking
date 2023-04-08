@@ -21,7 +21,7 @@ const Gallery = () => {
       setPhotos(response.data.photos);
     }
     fetchUser();
-  }, [params.uid, photos]);
+  }, [params.uid, user]);
 
   return (
     <>
@@ -37,6 +37,7 @@ const Gallery = () => {
             <div className="gallery-title-upload">
               <h2>Hello @{user.username}!</h2>
               <h4>Want to add photos to your gallery?</h4>
+              <h5>5mb max, jpg and png only</h5>
               <GalleryUpload />
             </div>
           </div>
@@ -45,13 +46,13 @@ const Gallery = () => {
               {photos &&
                 photos.map((photo, index) => (
                   <div className="gallery-photo-item" key={index}>
-                    <img src={photo} alt="" />
+                    <img src={`/${photo}`} alt="" /> 
                   </div>
                 ))}
             </div>
           </div>
         </>
-      ) : (
+      ) : ( 
         <>
           <button
             className="previous-page"
@@ -65,7 +66,7 @@ const Gallery = () => {
               {photos &&
                 photos.map((photo, index) => (
                   <div className="gallery-photo-item" key={index}>
-                    <img src={photo} alt="" />
+                    <img src={`/${photo}`} alt="" />
                   </div>
                 ))}
             </div>

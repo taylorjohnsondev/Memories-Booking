@@ -19,7 +19,7 @@ router.put(
           _id: req.params.uid,
         },
         {
-          profile_image: `/${req.file.filename}`,
+          profile_image: `/uploads/${req.file.filename}`,
         },
         {
           new: true,

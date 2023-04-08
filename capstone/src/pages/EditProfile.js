@@ -19,16 +19,13 @@ function EditProfile() {
   const [errorMsg, setErrorMsg] = useState("");
   const token = savedUser.token;
 
-
   useEffect(() => {
     async function fetchUser() {
-      const response = await axios.get(
-        `api/photographers/${params.uid}`
-      );
+      const response = await axios.get(`api/photographers/${params.uid}`);
       setUser(response.data);
     }
     fetchUser();
-  }, [params.uid]);
+  }, [params.uid, user]);
 
   axios.interceptors.request.use(
     (config) => {
@@ -44,15 +41,12 @@ function EditProfile() {
     event.preventDefault();
 
     try {
-      const res = await axios.put(
-        `api/photographers/${savedUser.uid}/edit`,
-        {
-          password,
-          bio,
-          fullname,
-          location,
-        }
-      );
+      const res = await axios.put(`api/photographers/${savedUser.uid}/edit`, {
+        password,
+        bio,
+        fullname,
+        location,
+      });
       console.log(res.data);
       toast.success("You have successfully updated your profile!");
     } catch (error) {
@@ -71,9 +65,7 @@ function EditProfile() {
     event.preventDefault();
 
     try {
-      await axios.delete(
-        `api/photographers/${savedUser.uid}`
-      );
+      await axios.delete(`api/photographers/${savedUser.uid}`);
       toast.success("Account Deleted");
       handleLogout();
     } catch (error) {
@@ -98,9 +90,6 @@ function EditProfile() {
             <h1>Update your profile</h1>
             <img src={user.profile_image} alt="" />
             <AvatarUpload />
-            <p>
-              <strong>{"@" + user.username}</strong>
-            </p>
           </div>
 
           <div className="edit-form">

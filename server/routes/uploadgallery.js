@@ -18,14 +18,14 @@ router.post(
         req.params.uid,
         {
           $push: {
-            photos: req.file.filename,
+            photos: `galleryuploads/${req.file.filename}`,
           },
         },
         {
           new: true,
         }
       );
- 
+
       res.status(200);
       res.json("Upload Success");
     } catch (err) {

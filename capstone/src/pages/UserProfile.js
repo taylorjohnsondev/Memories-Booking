@@ -139,7 +139,7 @@ const UserProfile = () => {
                   {recentphotos &&
                     recentphotos.map((photo, index) => (
                       <div className="gallery-photo-item" key={index}>
-                        <img src={`/gallery/${photo}`} alt="" />
+                        <img src={`/${photo}`} alt="" />
                       </div>
                     ))}
                 </div>

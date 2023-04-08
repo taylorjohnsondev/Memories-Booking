@@ -36,6 +36,7 @@ function AvatarUpload() {
   };
   return (
     <div className="AvatarUploader">
+      <h5>5mb max, jpg and png only</h5> 
       <input type="file" name="newImage" onChange={currentFile} />
       <button onClick={handlePost}>Upload</button>
     </div>
