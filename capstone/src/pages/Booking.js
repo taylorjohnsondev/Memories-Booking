@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "../axios/axiosConfig"
+import axios from "axios";
 import Loading from "../components/LoadingBar/Loading";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -25,10 +25,11 @@ const Booking = () => {
         `api/photographers/${params.uid}`
       );
       setUser(response.data);
-      setLoading(false);
+      setLoading(false); 
     }
     fetchPhotographers();
   }, [params.uid]);
+
 
   if (loading) {
     return <Loading />;
@@ -36,7 +37,6 @@ const Booking = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     try {
       await axios.post(`api/book/${params.uid}`, {
         name,
@@ -50,7 +50,7 @@ const Booking = () => {
       toast.success(`You have successfully booked with @${user.username}!`);
     } catch (error) {
       toast.error("Booking appointment failed");
-    }
+    } 
   };
 
   return (
@@ -115,7 +115,7 @@ const Booking = () => {
             placeholder="Time"
             value={time}
             onChange={(e) => setTime(e.target.value)}
-            required  
+            required
           ></input>
           <br />
           <input
@@ -130,6 +130,8 @@ const Booking = () => {
           <button className="book-btn">Book</button>
         </div>
         <div className="booking-photo">
+        <h2>Booking @{user.username}</h2>
+
           <img src={require("./booking.jpg")} alt="" />
         </div>
       </form>
