@@ -43,7 +43,7 @@ function Signup() {
   };
 
   function handleLogout() {
-    localStorage.clear();
+    localStorage.removeItem("memoriesuser");
     navigate("/");
     navigate(0);
   }

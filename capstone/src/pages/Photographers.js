@@ -10,7 +10,7 @@ const Photographers = () => {
 
   useEffect(() => {
     async function fetchPhotographers() {
-      const response = await axios.get(`http://34.226.123.85/api/photographers`);
+      const response = await axios.get(`api/photographers`);
       setUsers(response.data);
       setLoading(false);
     }

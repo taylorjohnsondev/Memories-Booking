@@ -15,13 +15,13 @@ app.use("/api", require("./routes/index"));
 
 app.get("/uploads/:filename", (req, res) => {
   const filename = req.params.filename;
-  res.sendFile(path.join(__dirname, "../uploads", filename));
+  res.sendFile(path.join(__dirname, "./uploads", filename));
 });
 
 app.get("/galleryuploads/:filename", (req, res) => {
   const filename = req.params.filename;
-  res.sendFile(path.join(__dirname, "../uploads/gallery", filename)); 
-}); 
+  res.sendFile(path.join(__dirname, "./uploads/gallery", filename)); 
+});
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../capstone/build")));

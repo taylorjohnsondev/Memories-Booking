@@ -11,7 +11,7 @@ function EditProfile() {
   let params = useParams();
   const navigate = useNavigate();
   const [user, setUser] = useState([]);
-  const savedUser = JSON.parse(localStorage.getItem("user"));
+  const savedUser = JSON.parse(localStorage.getItem("memoriesuser"));
   const [fullname, setFullName] = useState("");
   const [location, setLocation] = useState("");
   const [password, setPassword] = useState("");

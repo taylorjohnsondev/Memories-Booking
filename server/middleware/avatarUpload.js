@@ -1,7 +1,7 @@
 const multer = require("multer");
 
 const storage = multer.diskStorage({
-  destination: "../uploads",
+  destination: "./uploads",
   filename: function (req, file, cb) {
     const filename = file.originalname.toLowerCase().split(" ").join("-");
     cb(null, "avatar-" + Date.now() + filename);
@@ -23,7 +23,7 @@ const upload = multer({
     } else {
       cb(null, false);
       return cb(new Error("Only .png and jpg files allowed"))
-    }
+    } 
   }
 });
 
