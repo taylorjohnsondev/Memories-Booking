@@ -9,7 +9,7 @@ function Login() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const user = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(localStorage.getItem("memoriesuser"));
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -20,7 +20,7 @@ function Login() {
         password,
       });
 
-      localStorage.setItem("user", JSON.stringify(response.data));
+      localStorage.setItem("memoriesuser", JSON.stringify(response.data));
       navigate("/");
       navigate(0);
     } catch (error) {
@@ -34,7 +34,7 @@ function Login() {
     }
   };
   function handleLogout() {
-    localStorage.clear();
+    localStorage.removeItem("memoriesuser");
     navigate("/");
     navigate(0);
   }  

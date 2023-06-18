@@ -7,7 +7,7 @@ export const AuthProvider = ({ children }) => {
   const [isAuth, setAuth] = useState(false);
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
+    const user = JSON.parse(localStorage.getItem("memoriesuser"));
     if (user) {
       return setAuth(true);
     }

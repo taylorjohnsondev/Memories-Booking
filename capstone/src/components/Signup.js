@@ -13,7 +13,7 @@ function Signup() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [fullname, setFullName] = useState("");
-  const user = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(localStorage.getItem("memoriesuser"));
 
   const handleSubmit = async (event) => {
     event.preventDefault();

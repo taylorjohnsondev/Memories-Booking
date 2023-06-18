@@ -76,10 +76,10 @@ function EditProfile() {
   };
 
   function handleLogout() {
-    localStorage.clear();
+    localStorage.removeItem("memoriesuser");
     navigate("/");
     navigate(0);
-  }
+  } 
 
   return (
     <div>

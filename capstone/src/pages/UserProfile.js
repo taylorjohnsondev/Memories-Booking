@@ -7,14 +7,14 @@ import { BsDoorOpen } from "react-icons/bs";
 import { RiGalleryLine } from "react-icons/ri";
 import { MdOutlineReviews } from "react-icons/md";
 import Loading from "../components/LoadingBar/Loading";
-
+ 
 const UserProfile = () => {
   let params = useParams();
   const navigate = useNavigate();
   const [user, setUser] = useState([]);
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(true);
-  const savedUser = JSON.parse(localStorage.getItem("user"));
+  const savedUser = JSON.parse(localStorage.getItem("memoriesuser"));
   const recentphotos = photos.slice(-3);
   useEffect(() => {
     async function fetchPhotographers() {

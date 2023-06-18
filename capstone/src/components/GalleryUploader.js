@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const user = JSON.parse(localStorage.getItem("user"));
+const user = JSON.parse(localStorage.getItem("memoriesuser"));
 
 function GalleryUpload() {
   const [file, setFile] = useState();

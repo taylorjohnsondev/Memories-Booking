@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export const Homepage = () => {
-  const user = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(localStorage.getItem("memoriesuser"));
 
   return (
     <div>

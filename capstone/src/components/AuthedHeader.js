@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "../components/css/header.css";
 
 function AuthedHeader() {
-  const user = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(localStorage.getItem("memoriesuser"));
 
   return (
     <header>
@@ -48,7 +48,7 @@ function AuthedHeader() {
                 <Link className="nav-link" to={`/photographers/${user.uid}`}>
                   My Profile
                 </Link> 
-              </li>  
+              </li>
             </ul>
           </div>
         </div>

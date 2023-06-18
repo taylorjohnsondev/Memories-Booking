@@ -2,6 +2,7 @@ const express = require("express");
 const User = require("../models/user");
 const router = express.Router();
 const requireAuth = require("../middleware/requireAuth");
+const mongoose = require("mongoose");
 
 router.route("/").get((req, res, next) => {
   res.send("booking endpoint");
@@ -47,6 +48,32 @@ router.post("/:uid", async (req, res) => {
     res.json("Book Success");
   } catch (err) {
     res.send(err);
+  }
+});
+ 
+router.delete("/:uid/:bookingId", requireAuth, async (req, res) => {
+  try {
+    const { uid, bookingId } = req.params;
+    const isValidObjectId = mongoose.Types.ObjectId.isValid(bookingId);
+
+    if (!isValidObjectId) {
+      return res.status(400).send("Invalid booking ID");
+    }
+
+    const updatedUser = await User.findByIdAndUpdate(
+      uid,
+      { $pull: { bookings: { _id: bookingId } } },
+      { new: true }
+    );
+
+    if (!updatedUser) {
+      return res.status(404).send("User not found");
+    }
+
+    res.status(200).json("Booking deleted successfully");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Server Error");
   }
 });
 

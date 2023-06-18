@@ -19,7 +19,7 @@ import useAuth from "./hooks/useAuth";
 import PhotographersbyLocation from "./pages/PhotographersbyLocation";
 function App() {
   const { isAuth } = useAuth();
-  const user = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(localStorage.getItem("memoriesuser"));
 
   return (
     <>

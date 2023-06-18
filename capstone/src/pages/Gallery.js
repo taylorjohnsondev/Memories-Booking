@@ -10,7 +10,7 @@ const Gallery = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState([]);
   const [photos, setPhotos] = useState([]);
-  const savedUser = JSON.parse(localStorage.getItem("user"));
+  const savedUser = JSON.parse(localStorage.getItem("memoriesuser"));
 
   useEffect(() => {
     async function fetchUser() {

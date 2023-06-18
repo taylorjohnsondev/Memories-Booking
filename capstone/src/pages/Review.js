@@ -19,7 +19,7 @@ const Review = () => {
   const [user, setUser] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [hoverValue, setHoverValue] = useState(undefined);
-  const savedUser = JSON.parse(localStorage.getItem("user"));
+  const savedUser = JSON.parse(localStorage.getItem("memoriesuser"));
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
