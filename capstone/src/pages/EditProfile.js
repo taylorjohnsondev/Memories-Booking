@@ -25,7 +25,7 @@ function EditProfile() {
       setUser(response.data);
     }
     fetchUser();
-  }, [params.uid, user]);
+  }, [params.uid]); 
 
   axios.interceptors.request.use(
     (config) => {
