@@ -21,7 +21,7 @@ const Gallery = () => {
       setPhotos(response.data.photos);
     }
     fetchUser();
-  }, [params.uid, user]);
+  }, [params.uid]);
 
   return (
     <>
