@@ -7,3 +7,5 @@ Deployed using Amazon Web Services EC2, currently offline due to free tier limit
 ![memoriesscreenshot1](https://github.com/taylorjohnsondev/Memories-Booking/assets/110127733/451260d5-2075-4c4d-8e46-f7cd220a0603)
 ![memoriesscreenshot2](https://github.com/taylorjohnsondev/Memories-Booking/assets/110127733/2682928a-9487-4ca5-879b-e68bb0a71541)
 ![memoriesscreenshot3](https://github.com/taylorjohnsondev/Memories-Booking/assets/110127733/5227da52-5fe5-43e7-9a16-a1cf06dd9b57)
+
+My (Alyssa) VSCode was not logged into my GitHub when project was being worked on. You can view my work under the commits history under the name "Alyssa Wiser".
