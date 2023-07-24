@@ -15,7 +15,7 @@ const Gallery = () => {
   useEffect(() => {
     async function fetchUser() {
       const response = await axios.get(
-        `api/photographers/${params.uid}`
+        `https://memories-server-dfui.onrender.com/api/photographers/${params.uid}`
       );
       setUser(response.data);
       setPhotos(response.data.photos);
@@ -46,7 +46,7 @@ const Gallery = () => {
               {photos &&
                 photos.map((photo, index) => (
                   <div className="gallery-photo-item" key={index}>
-                    <img src={`/${photo}`} alt="" /> 
+                    <img src={`https://memories-server-dfui.onrender.com/${photo}`} alt="" /> 
                   </div>
                 ))}
             </div>
@@ -66,7 +66,7 @@ const Gallery = () => {
               {photos &&
                 photos.map((photo, index) => (
                   <div className="gallery-photo-item" key={index}>
-                    <img src={`/${photo}`} alt="" />
+                    <img src={`https://memories-server-dfui.onrender.com/${photo}`} alt="" />
                   </div>
                 ))}
             </div>

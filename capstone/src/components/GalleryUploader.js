@@ -25,10 +25,11 @@ function GalleryUpload() {
   const handlePost = async (e) => {
     e.preventDefault();
 
+
     const formData = new FormData();
     formData.append("newImage", file);
     axios
-      .post(`api/gallery/${user.uid}`, formData) 
+      .post(`https://memories-server-dfui.onrender.com/api/gallery/${user.uid}`, formData) 
       .then((response) => {
         console.log(response.data);
         navigate(0) 

@@ -28,7 +28,7 @@ function AvatarUpload() {
     const formData = new FormData();
     formData.append("newImage", file);
     axios
-      .put(`api/upload/${user.uid}`, formData)
+      .put(`https://memories-server-dfui.onrender.com/api/upload/${user.uid}`, formData)
       .then((response) => {
         console.log(response.data);
         navigate(0)

@@ -21,11 +21,11 @@ function EditProfile() {
 
   useEffect(() => {
     async function fetchUser() {
-      const response = await axios.get(`api/photographers/${params.uid}`);
+      const response = await axios.get(`https://memories-server-dfui.onrender.com/api/photographers/${params.uid}`);
       setUser(response.data);
     }
     fetchUser();
-  }, [params.uid]); 
+  }, [params.uid]);
 
   axios.interceptors.request.use(
     (config) => {
@@ -41,7 +41,7 @@ function EditProfile() {
     event.preventDefault();
 
     try {
-      const res = await axios.put(`api/photographers/${savedUser.uid}/edit`, {
+      const res = await axios.put(`https://memories-server-dfui.onrender.com/api/photographers/${savedUser.uid}/edit`, {
         password,
         bio,
         fullname,
@@ -65,7 +65,7 @@ function EditProfile() {
     event.preventDefault();
 
     try {
-      await axios.delete(`api/photographers/${savedUser.uid}`);
+      await axios.delete(`https://memories-server-dfui.onrender.com/api/photographers/${savedUser.uid}`);
       toast.success("Account Deleted");
       handleLogout();
     } catch (error) {
@@ -79,7 +79,7 @@ function EditProfile() {
     localStorage.removeItem("memoriesuser");
     navigate("/");
     navigate(0);
-  } 
+  }
 
   return (
     <div>
@@ -88,7 +88,10 @@ function EditProfile() {
         <>
           <div className="pfp-username-card">
             <h1>Update your profile</h1>
-            <img src={user.profile_image} alt="" />
+            <img
+              src={`https://memories-server-dfui.onrender.com${user.profile_image}`}
+              alt=""
+            />
             <AvatarUpload />
           </div>
 

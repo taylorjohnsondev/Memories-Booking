@@ -19,7 +19,7 @@ function Signup() {
     event.preventDefault();
 
     try {
-      const response = await axios.post("api/auth/register", {
+      const response = await axios.post("https://memories-server-dfui.onrender.com/api/auth/register", {
         email,
         username,
         password,

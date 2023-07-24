@@ -10,7 +10,7 @@ const Photographers = () => {
 
   useEffect(() => {
     async function fetchPhotographers() {
-      const response = await axios.get(`api/photographers`);
+      const response = await axios.get(`https://memories-server-dfui.onrender.com/api/photographers`);
       setUsers(response.data);
       setLoading(false);
     }
@@ -29,7 +29,7 @@ const Photographers = () => {
             <div id="user" key={user._id}>
               <img
                 className="photographerimg"
-                src={user.profile_image}
+                src={`https://memories-server-dfui.onrender.com${user.profile_image}`}
                 alt=""
               />
               {user.fullname}

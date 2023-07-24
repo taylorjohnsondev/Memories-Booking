@@ -22,7 +22,7 @@ const Booking = () => {
   useEffect(() => {
     async function fetchPhotographers() {
       const response = await axios.get(
-        `api/photographers/${params.uid}`
+        `https://memories-server-dfui.onrender.com/api/photographers/${params.uid}`
       );
       setUser(response.data);
       setLoading(false); 
@@ -38,7 +38,7 @@ const Booking = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post(`api/book/${params.uid}`, {
+      await axios.post(`https://memories-server-dfui.onrender.com/api/book/${params.uid}`, {
         name,
         email,
         phone,

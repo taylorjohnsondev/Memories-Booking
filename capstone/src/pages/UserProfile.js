@@ -7,7 +7,7 @@ import { BsDoorOpen } from "react-icons/bs";
 import { RiGalleryLine } from "react-icons/ri";
 import { MdOutlineReviews } from "react-icons/md";
 import Loading from "../components/LoadingBar/Loading";
- 
+
 const UserProfile = () => {
   let params = useParams();
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const UserProfile = () => {
   useEffect(() => {
     async function fetchPhotographers() {
       const response = await axios.get(
-        `api/photographers/${params.uid}`
+        `https://memories-server-dfui.onrender.com/api/photographers/${params.uid}`
       );
       setUser(response.data);
       setPhotos(response.data.photos);
@@ -36,7 +36,10 @@ const UserProfile = () => {
     <div className="user-profile-page">
       <div className="user-profile">
         <div className="profile-pic">
-          <img src={user.profile_image} alt="" />
+          <img
+            src={`https://memories-server-dfui.onrender.com${user.profile_image}`}
+            alt=""
+          />
           <p className="username-profile">
             <strong>{user.fullname}</strong>
             <br />
@@ -132,18 +135,18 @@ const UserProfile = () => {
               <h3>Location</h3>
               <p>{user.location}</p>
             </div>
-              <div className="recent-section"> 
+            <div className="recent-section">
               <h2>Recent Photos</h2>
 
-                <div className="gallery-photo-container">
-                  {recentphotos &&
-                    recentphotos.map((photo, index) => (
-                      <div className="gallery-photo-item" key={index}>
-                        <img src={`/${photo}`} alt="" />
-                      </div>
-                    ))}
-                </div>
+              <div className="gallery-photo-container">
+                {recentphotos &&
+                  recentphotos.map((photo, index) => (
+                    <div className="gallery-photo-item" key={index}>
+                      <img src={`https://memories-server-dfui.onrender.com/${photo}`} alt="" />
+                    </div>
+                  ))}
               </div>
+            </div>
 
             {savedUser ? (
               ""

@@ -25,7 +25,7 @@ const Review = () => {
   useEffect(() => {
     async function fetchPhotographers() {
       const response = await axios.get(
-        `api/photographers/${params.uid}`
+        `https://memories-server-dfui.onrender.com/api/photographers/${params.uid}`
       );
       setUser(response.data);
       setReviews(response.data.reviews || []);
@@ -55,7 +55,7 @@ const Review = () => {
     }
 
     try {
-      await axios.post(`api/review/${params.uid}`, {
+      await axios.post(`https://memories-server-dfui.onrender.com/api/review/${params.uid}`, {
         name,
         comment,
         stars,

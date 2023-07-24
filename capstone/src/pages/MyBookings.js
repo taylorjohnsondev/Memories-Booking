@@ -15,7 +15,7 @@ const MyBookings = () => {
 
   useEffect(() => {
     async function fetchPhotographers() {
-      const response = await axios.get(`api/photographers/${params.uid}`);
+      const response = await axios.get(`https://memories-server-dfui.onrender.com/api/photographers/${params.uid}`);
       setUser(response.data);
       setBookings(response.data.bookings || []);
       setLoading(false);
@@ -25,7 +25,7 @@ const MyBookings = () => {
 
   useEffect(() => {
     async function fetchBookings() {
-      const response = await axios.get(`api/book/${params.uid}`);
+      const response = await axios.get(`https://memories-server-dfui.onrender.com/api/book/${params.uid}`);
       setBookings(response.data.bookings || []);
       setLoading(false);
     }
@@ -44,7 +44,7 @@ const MyBookings = () => {
  
   const handleDeleteBooking = async (bookingId) => {
     try {
-      await axios.delete(`api/book/${params.uid}/${bookingId}`);
+      await axios.delete(`https://memories-server-dfui.onrender.com/api/book/${params.uid}/${bookingId}`);
       setBookings((prevBookings) =>
         prevBookings.filter((booking) => booking._id !== bookingId)
       );
