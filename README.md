@@ -1,4 +1,4 @@
-Memories Booking, created by Taylor Johnson, Alyssa Wiser, and Fernando Puente.
+Memories Booking, created by Taylor Johnson and Fernando Puente.
 
 
 A website that allows photographers to create accounts, upload photos, and receive reviews. A customer can find a photographer to book and review them, created for MERN Capstone at Kenzie Academy.
